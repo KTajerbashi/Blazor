@@ -5,6 +5,10 @@
     <ProjectReference Include="..\CleanArchitectureBlazor.Application\CleanArchitectureBlazor.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="InfrastructureBase\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
