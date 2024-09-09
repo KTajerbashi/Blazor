@@ -4,10 +4,6 @@
     <ProjectReference Include="..\CleanArchitectureBlazor.Core\CleanArchitectureBlazor.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ApplicationBase\" />
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
