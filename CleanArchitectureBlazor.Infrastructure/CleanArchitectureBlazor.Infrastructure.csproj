@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanArchitectureBlazor.Core\CleanArchitectureBlazor.Core.csproj" />
-    <ProjectReference Include="..\CleanArchitectureBlazor.Application\CleanArchitectureBlazor.Application.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="InfrastructureBase\" />
+    <ProjectReference Include="..\CleanArchitectureBlazor.Core\CleanArchitectureBlazor.Core.csproj" />
+    <ProjectReference Include="..\CleanArchitectureBlazor.Application\CleanArchitectureBlazor.Application.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
