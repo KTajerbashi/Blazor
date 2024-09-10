@@ -12,4 +12,9 @@ public class UserClaimEntity : IdentityUserClaim<long>, IEntity {
     public bool IsActive { get; set; }
     public bool IsDeleted { get; set; }
     public Guid Key { get; set; }
+    public void Delete()
+    {
+        IsActive = false;
+        IsDeleted = true;
+    }
 }

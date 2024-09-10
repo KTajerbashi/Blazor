@@ -22,5 +22,9 @@ public class RoleEntity : IdentityRole<long>, IEntity
         
     }
     public virtual ICollection<RoleMenuEntity> RoleMenuEntities { get; set; }
-
+    public void Delete()
+    {
+        IsActive = false;
+        IsDeleted = true;
+    }
 }

@@ -11,4 +11,9 @@ public class RoleClaimEntity : IdentityRoleClaim<long>, IEntity {
     public bool IsActive { get; set; }
     public bool IsDeleted { get; set; }
     public Guid Key { get; set; }
+    public void Delete()
+    {
+        IsActive = false;
+        IsDeleted = true;
+    }
 }
