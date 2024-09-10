@@ -9,6 +9,14 @@ namespace CleanArchitectureBlazor.Core.Domains.Security;
 [Table("Role", Schema = "Security"), Description("نقش")]
 public class RoleEntity : IdentityRole<long>, IEntity
 {
+    public RoleEntity(string name):base(name)
+    {
+        
+    }
+    public RoleEntity()
+    {
+        
+    }
     public virtual ICollection<RoleMenuEntity> RoleMenuEntities { get; set; }
 
 }
