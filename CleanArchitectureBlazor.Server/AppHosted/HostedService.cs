@@ -1,5 +1,6 @@
 ﻿using CleanArchitectureBlazor.Infrastructure.DIExtensions;
 using CleanArchitectureBlazor.Server.Components;
+using CleanArchitectureBlazor.Server.Extensions.Identity;
 
 namespace CleanArchitectureBlazor.Server.AppHosted;
 
@@ -13,6 +14,12 @@ public static class HostedService
             .AddInteractiveServerComponents();
 
         builder.Services.AddInfrastructure(configuration, "DefaultConnection");
+
+        builder.Services.AddIdentityServices(configuration);
+
+        builder.Services.AddControllersWithViews();
+
+        builder.Services.AddRazorPages();
 
         return builder.Build();
     }
@@ -32,6 +39,9 @@ public static class HostedService
 
         app.MapRazorComponents<App>()
             .AddInteractiveServerRenderMode();
+
+        Task.WaitAny(app.UseCreateSeed());
+
         return app;
     }
 }
