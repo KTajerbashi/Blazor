@@ -1,5 +1,4 @@
 ﻿namespace CleanArchitectureBlazor.Application.ApplicationBase.Services;
-
 public interface IBaseService<TEntity>
 {
     Task<TEntity> GetAsync(Guid key);
