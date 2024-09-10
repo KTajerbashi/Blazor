@@ -1,4 +1,6 @@
-﻿using CleanArchitectureBlazor.Core.Domains.Security;
+﻿using CleanArchitectureBlazor.Core.Domains.Privilege;
+using CleanArchitectureBlazor.Core.Domains.Security;
+using CleanArchitectureBlazor.Core.Domains.Setting;
 using CleanArchitectureBlazor.Infrastructure.InfrastructureBase.Databases;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,4 +34,9 @@ public class DbContextApplication : BaseContext
     public virtual DbSet<RoleClaimEntity> RoleClaimEntities { get; set; }
     public virtual DbSet<UserTokenEntity> UserTokenEntities { get; set; }
     #endregion
+
+    public virtual DbSet<MenuEntity> MenuEntities { get; set; }
+    public virtual DbSet<RoleMenuEntity> RoleMenuEntities { get; set; }
+
+
 }
