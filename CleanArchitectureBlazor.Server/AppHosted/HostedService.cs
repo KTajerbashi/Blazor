@@ -35,12 +35,14 @@ public static class HostedService
         app.UseHttpsRedirection();
 
         app.UseStaticFiles();
+
         app.UseAntiforgery();
 
         app.MapRazorComponents<App>()
             .AddInteractiveServerRenderMode();
 
-        Task.WaitAny(app.UseCreateSeed());
+
+        app.UseIdentity();
 
         return app;
     }

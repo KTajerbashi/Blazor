@@ -1,0 +1,32 @@
+﻿@page "/login"
+@inject NavigationManager Navigation
+@inject HttpClient Http
+@code {
+    private string email;
+    private string password;
+    private string errorMessage;
+
+    private async Task HandleLogin()
+    {
+        var loginModel = new { Email = email, Password = password };
+        var response = await Http.PostAsJsonAsync("/api/account/login", loginModel);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            errorMessage = "Login failed. Please try again.";
+        }
+    }
+}
+
+<EditForm Model="this" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <InputText @bind-Value="email" placeholder="Email" />
+    <InputText @bind-Value="password" placeholder="Password" type="password" />
+    <button type="submit">Login</button>
+</EditForm>
+<p>@errorMessage</p>

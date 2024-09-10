@@ -1,0 +1,40 @@
+﻿@page "/register"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@code {
+    private string email;
+    private string password;
+    private string confirmPassword;
+    private string errorMessage;
+
+    private async Task HandleRegister()
+    {
+        if (password != confirmPassword)
+        {
+            errorMessage = "Passwords do not match!";
+            return;
+        }
+
+        var registerModel = new { Email = email, Password = password, ConfirmPassword = confirmPassword };
+        var response = await Http.PostAsJsonAsync("/api/account/register", registerModel);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo("/login");
+        }
+        else
+        {
+            errorMessage = "Registration failed. Please try again.";
+        }
+    }
+}
+
+<EditForm Model="this" OnValidSubmit="HandleRegister">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <InputText @bind-Value="email" placeholder="Email" />
+    <InputText @bind-Value="password" placeholder="Password" type="password" />
+    <InputText @bind-Value="confirmPassword" placeholder="Confirm Password" type="password" />
+    <button type="submit">Register</button>
+</EditForm>
+<p>@errorMessage</p>
