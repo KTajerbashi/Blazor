@@ -1,17 +1,21 @@
-﻿namespace CleanArchitectureBlazor.Application.ApplicationBase.Services;
-public interface IBaseService<TEntity>
+﻿using CleanArchitectureBlazor.Application.ApplicationBase.Pattern;
+
+namespace CleanArchitectureBlazor.Application.ApplicationBase.Services;
+
+
+public interface IBaseService<TEntity> : IUnitOfWork, IQueryDapper
 {
-    Task<TEntity> GetAsync(Guid key);
     TEntity Get(Guid key);
+    Task<TEntity> GetAsync(Guid key);
 
-    Task<TEntity> GetAsync(long id);
     TEntity Get(long id);
+    Task<TEntity> GetAsync(long id);
 
-    Task<IEnumerable<TEntity>> GetAsync();
     IEnumerable<TEntity> Get();
+    Task<IEnumerable<TEntity>> GetAsync();
 
     Guid Insert(TEntity entity);
-    Guid InsertAsync(TEntity entity);
+    Task<Guid> InsertAsync(TEntity entity);
 
     void Delete(Guid key);
     Task DeleteAsync(Guid key);
