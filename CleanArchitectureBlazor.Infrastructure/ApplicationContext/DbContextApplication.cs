@@ -3,7 +3,6 @@ using CleanArchitectureBlazor.Core.Domains.Security;
 using CleanArchitectureBlazor.Core.Domains.Setting;
 using CleanArchitectureBlazor.Infrastructure.InfrastructureBase.Databases;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
 
 namespace CleanArchitectureBlazor.Infrastructure.ApplicationContext;
 
@@ -38,14 +37,4 @@ public class DbContextApplication : BaseContext
 
     public virtual DbSet<MenuEntity> MenuEntities { get; set; }
     public virtual DbSet<RoleMenuEntity> RoleMenuEntities { get; set; }
-}
-public class DbContextApplicationFactory : IDesignTimeDbContextFactory<DbContextApplication>
-{
-    public DbContextApplication CreateDbContext(string[] args)
-    {
-        var optionsBuilder = new DbContextOptionsBuilder<DbContextApplication>();
-        optionsBuilder.UseSqlServer();
-
-        return new DbContextApplication(optionsBuilder.Options);
-    }
 }

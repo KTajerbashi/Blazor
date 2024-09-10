@@ -2,7 +2,6 @@
 using CleanArchitectureBlazor.Infrastructure.ApplicationContext;
 
 namespace CleanArchitectureBlazor.Infrastructure.InfrastructureBase.Services;
-
 public abstract class BaseService<TEntity> : IBaseService<TEntity>
 {
     protected DbContextApplication Context;
