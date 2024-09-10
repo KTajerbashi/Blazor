@@ -11,7 +11,8 @@ public static class HostedService
         IConfiguration configuration = builder.Configuration;
         builder.Services
             .AddRazorComponents()
-            .AddInteractiveServerComponents();
+            .AddInteractiveServerComponents()
+            .AddInteractiveWebAssemblyComponents();
 
         builder.Services.AddInfrastructure(configuration, "DefaultConnection");
 
@@ -31,19 +32,24 @@ public static class HostedService
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
+        else
+        {
+            app.UseWebAssemblyDebugging();
+        }
 
         app.UseHttpsRedirection();
 
         app.UseStaticFiles();
 
         app.UseAntiforgery();
-
-        app.MapRazorComponents<App>()
-            .AddInteractiveServerRenderMode();
-
-
+        
         app.UseIdentity();
 
+        app
+            .MapRazorComponents<App>()
+            .AddInteractiveServerRenderMode()
+            .AddInteractiveWebAssemblyRenderMode()
+            .AddAdditionalAssemblies(typeof(CleanArchitectureBlazor.Client._Imports).Assembly);
         return app;
     }
 }
