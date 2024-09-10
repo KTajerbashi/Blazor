@@ -11,8 +11,6 @@ public static class DatabaseExtensions
         => services.AddDatabaseContext(configuration, sectionName);
     private static IServiceCollection AddDatabaseContext(this IServiceCollection services, IConfiguration configuration, string sectionName)
     {
-        var connectionString = configuration["ConnectionStrings:DefaultConnection"];
-        
         services.AddDbContext<DbContextApplication>(option =>
         {
             option.UseSqlServer(configuration.GetConnectionString(sectionName));
