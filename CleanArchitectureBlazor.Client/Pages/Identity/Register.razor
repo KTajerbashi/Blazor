@@ -1,40 +1,41 @@
 ﻿@page "/register"
 @inject HttpClient Http
-@inject NavigationManager Navigation
+
+<h3>Register</h3>
+
+@if (message != null)
+{
+    <p>@message</p>
+}
+
+<input @bind="email" placeholder="Email" />
+<input @bind="password" type="password" placeholder="Password" />
+<button @onclick="RegisterUser">Register</button>
+
 @code {
     private string email;
     private string password;
-    private string confirmPassword;
-    private string errorMessage;
+    private string message;
 
-    private async Task HandleRegister()
+    private async Task RegisterUser()
     {
-        if (password != confirmPassword)
-        {
-            errorMessage = "Passwords do not match!";
-            return;
-        }
-
-        var registerModel = new { Email = email, Password = password, ConfirmPassword = confirmPassword };
-        var response = await Http.PostAsJsonAsync("/api/account/register", registerModel);
+        var model = new RegisterModel { Email = email, Password = password };
+        var response = await Http.PostAsJsonAsync("api/Authentication/Register", model);
 
         if (response.IsSuccessStatusCode)
         {
-            Navigation.NavigateTo("/login");
+            var result = await response.Content.ReadFromJsonAsync<dynamic>();
+            message = result?.Message;
         }
         else
         {
-            errorMessage = "Registration failed. Please try again.";
+            message = "Registration failed";
         }
     }
-}
 
-<EditForm Model="this" OnValidSubmit="HandleRegister">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-    <InputText @bind-Value="email" placeholder="Email" />
-    <InputText @bind-Value="password" placeholder="Password" type="password" />
-    <InputText @bind-Value="confirmPassword" placeholder="Confirm Password" type="password" />
-    <button type="submit">Register</button>
-</EditForm>
-<p>@errorMessage</p>
+    public class RegisterModel
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+}

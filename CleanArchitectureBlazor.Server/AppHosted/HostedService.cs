@@ -3,16 +3,15 @@ using CleanArchitectureBlazor.Server.Components;
 using CleanArchitectureBlazor.Server.Extensions.Identity;
 
 namespace CleanArchitectureBlazor.Server.AppHosted;
-
 public static class HostedService
 {
     public static WebApplication ConfigurationService(this WebApplicationBuilder builder)
     {
         IConfiguration configuration = builder.Configuration;
-        builder.Services
-            .AddRazorComponents()
-            .AddInteractiveServerComponents()
-            .AddInteractiveWebAssemblyComponents();
+        
+        builder.Services.AddMainServices();
+
+        builder.Services.AddHttpClient();
 
         builder.Services.AddInfrastructure(configuration, "DefaultConnection");
 
@@ -21,6 +20,16 @@ public static class HostedService
         builder.Services.AddControllersWithViews();
 
         builder.Services.AddRazorPages();
+
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAllOrigins",
+                builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+        });
+        builder.Services.AddControllers();
 
         return builder.Build();
     }
@@ -39,10 +48,14 @@ public static class HostedService
 
         app.UseHttpsRedirection();
 
+        app.UseCors("AllowAllOrigins");
+       
+        app.UseRouting();
+
         app.UseStaticFiles();
 
         app.UseAntiforgery();
-        
+
         app.UseIdentity();
 
         app
@@ -50,6 +63,12 @@ public static class HostedService
             .AddInteractiveServerRenderMode()
             .AddInteractiveWebAssemblyRenderMode()
             .AddAdditionalAssemblies(typeof(CleanArchitectureBlazor.Client._Imports).Assembly);
+
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+        });
+
         return app;
     }
 }

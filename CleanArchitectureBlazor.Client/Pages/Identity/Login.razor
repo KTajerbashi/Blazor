@@ -1,32 +1,52 @@
 ﻿@page "/login"
-@inject NavigationManager Navigation
+@using System.Net.Http.Headers
 @inject HttpClient Http
-@code {
-    private string email;
-    private string password;
-    private string errorMessage;
+@inject IJSRuntime JS
+<h3>Login</h3>
 
-    private async Task HandleLogin()
+@if (message != null)
+{
+    <p>@message</p>
+}
+
+<input @bind="username" placeholder="Username" />
+<input @bind="password" type="password" placeholder="Password" />
+<button @onclick="LoginUser">Login</button>
+
+@code {
+    private string username;
+    private string password;
+    private string message;
+
+    private async Task LoginUser()
     {
-        var loginModel = new { Email = email, Password = password };
-        var response = await Http.PostAsJsonAsync("/api/account/login", loginModel);
+        var model = new UserLoginModel { Username = username, Password = password };
+        var response = await Http.PostAsJsonAsync("api/Authentication/Login", model);
 
         if (response.IsSuccessStatusCode)
         {
-            Navigation.NavigateTo("/");
+            var result = await response.Content.ReadFromJsonAsync<dynamic>();
+            var token =Convert.ToString(result?.token) as string;
+
+            // Store the token in localStorage
+            JS.InvokeVoidAsync("localStorage.setItem", "authToken", token);
+            message = "Login successful!";
+
+
         }
         else
         {
-            errorMessage = "Login failed. Please try again.";
+            message = "Login failed";
         }
     }
+    private async Task GetToken()
+    {
+        var token = await JS.InvokeAsync<string>("localStorage.getItem", "authToken");
+        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+    }
+    public class UserLoginModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
 }
-
-<EditForm Model="this" OnValidSubmit="HandleLogin">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-    <InputText @bind-Value="email" placeholder="Email" />
-    <InputText @bind-Value="password" placeholder="Password" type="password" />
-    <button type="submit">Login</button>
-</EditForm>
-<p>@errorMessage</p>

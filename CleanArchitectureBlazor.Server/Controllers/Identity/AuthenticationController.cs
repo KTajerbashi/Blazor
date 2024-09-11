@@ -1,6 +1,6 @@
-﻿using CleanArchitectureBlazor.Core.Domains.Security;
+﻿using CleanArchitectureBlazor.Application.Models.Security.User;
+using CleanArchitectureBlazor.Core.Domains.Security;
 using CleanArchitectureBlazor.Server.Controllers.Base;
-using CleanArchitectureBlazor.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -23,7 +23,7 @@ public class AuthenticationController : BaseController
     [HttpPost("Register")]
     public async Task<IActionResult> Register([FromBody] RegisterModel model)
     {
-        var user = new UserEntity { UserName = model.Username, Email = model.Email };
+        var user = new UserEntity { UserName = model.Email, Email = model.Email };
         var result = await _userManager.CreateAsync(user, model.Password);
 
         if (result.Succeeded)
@@ -34,7 +34,7 @@ public class AuthenticationController : BaseController
     }
 
     [HttpPost("Login")]
-    public async Task<IActionResult> Login([FromBody] LoginModel model)
+    public async Task<IActionResult> Login([FromBody] UserLoginModel model)
     {
         var user = await _userManager.FindByNameAsync(model.Username);
         if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
@@ -44,7 +44,7 @@ public class AuthenticationController : BaseController
         }
         return Unauthorized();
     }
-    
+
     private string GenerateJwtToken(UserEntity user)
     {
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

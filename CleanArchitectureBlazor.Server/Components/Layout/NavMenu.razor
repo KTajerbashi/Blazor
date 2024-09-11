@@ -1,4 +1,7 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using CleanArchitectureBlazor.Application.Models.Setting.Menu
+@using CleanArchitectureBlazor.Application.Repositories.Setting
+@inject IMenuService MenuService
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Tajerbashi</a>
     </div>
@@ -25,6 +28,22 @@
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
             </NavLink>
         </div>
+        @foreach (var item in menuItems)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="@item.Link">
+                    <span class="@item.Icon" aria-hidden="true"></span> @item.Title
+                </NavLink>
+            </div>
+        }
+
     </nav>
 </div>
+@code {
+    private IEnumerable<MenuProfileModel> menuItems = new List<MenuProfileModel>();
+    protected override async Task OnInitializedAsync()
+    {
+        menuItems = await MenuService.ReadProfileAsync();
+    }
+}
 
