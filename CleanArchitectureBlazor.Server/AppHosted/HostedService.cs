@@ -8,7 +8,7 @@ public static class HostedService
     public static WebApplication ConfigurationService(this WebApplicationBuilder builder)
     {
         IConfiguration configuration = builder.Configuration;
-        
+
         builder.Services.AddMainServices();
 
         builder.Services.AddHttpClient();
