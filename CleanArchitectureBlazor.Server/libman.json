@@ -3,13 +3,16 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "provider": "cdnjs",
       "library": "bootstrap-icons@1.11.3",
       "destination": "wwwroot/bootstrap-icons/",
       "files": [
         "bootstrap-icons.svg",
         "font/bootstrap-icons.min.css"
       ]
+    },
+    {
+      "library": "bootstrap@5.3.3",
+      "destination": "wwwroot/bootstrap/"
     }
   ]
 }

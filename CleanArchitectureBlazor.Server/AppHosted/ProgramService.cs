@@ -9,6 +9,8 @@ public static class ProgramService
             .AddInteractiveServerComponents()
             .AddInteractiveWebAssemblyComponents();
 
+        services.AddBlazorBootstrap();
+
         services.AddCors(options =>
         {
             options.AddPolicy("AllowAllOrigins", builder =>
