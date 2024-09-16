@@ -10,8 +10,4 @@
     <ProjectReference Include="..\CleanArchitectureBlazor.Core.Domain\CleanArchitectureBlazor.Core.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="BaseCoreApplication\" />
-  </ItemGroup>
-
 </Project>

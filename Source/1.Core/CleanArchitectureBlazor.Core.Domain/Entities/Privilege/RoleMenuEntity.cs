@@ -17,3 +17,4 @@ public class RoleMenuEntity : Entity
     public long RoleId { get; set; }
     public virtual RoleEntity Role { get; set; }
 }
+
