@@ -1,4 +1,4 @@
-namespace CleanArchitectureBlazor.Core.xTest
+namespace CleanArchitectureBlazor.Infra.xTest
 {
     public class UnitTest1
     {
