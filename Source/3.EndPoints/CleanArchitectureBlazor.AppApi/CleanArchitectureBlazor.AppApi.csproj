@@ -10,6 +10,7 @@
     <ProjectReference Include="..\..\1.Core\CleanArchitectureBlazor.Core.ApplicationService\CleanArchitectureBlazor.Core.ApplicationService.csproj" />
     <ProjectReference Include="..\..\2.Infrastructure\CleanArchitectureBlazor.Infra.DataSql\CleanArchitectureBlazor.Infra.DataSql.csproj" />
     <ProjectReference Include="..\CleanArchitectureBlazor.AppApi.Client\CleanArchitectureBlazor.AppApi.Client.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.7" />
   </ItemGroup>
 
