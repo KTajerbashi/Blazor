@@ -1,0 +1,567 @@
+2024-09-20 02:34:06.079 +03:30 [INF] Application Started  ...
+2024-09-20 02:34:07.030 +03:30 [INF] User profile is available. Using 'C:\Users\Tajer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-20 02:34:07.342 +03:30 [INF] Now listening on: https://localhost:7224
+2024-09-20 02:34:07.343 +03:30 [INF] Now listening on: http://localhost:5274
+2024-09-20 02:34:07.346 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-20 02:34:07.347 +03:30 [INF] Hosting environment: Development
+2024-09-20 02:34:07.348 +03:30 [INF] Content root path: C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi
+2024-09-20 02:34:08.889 +03:30 [INF] Request starting HTTP/1.1 GET https://localhost/_framework/debug/ws-proxy?browser=ws%3A%2F%2F127.0.0.1%3A4055%2Fdevtools%2Fbrowser%2F38fc412e-ae9a-4932-9b88-935a135be812 - null null
+2024-09-20 02:34:09.071 +03:30 [INF] Request finished HTTP/1.1 GET https://localhost/_framework/debug/ws-proxy?browser=ws%3A%2F%2F127.0.0.1%3A4055%2Fdevtools%2Fbrowser%2F38fc412e-ae9a-4932-9b88-935a135be812 - 302 0 null 184.8793ms
+2024-09-20 02:34:09.254 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/ - null null
+2024-09-20 02:34:09.419 +03:30 [INF] Executing endpoint '/ (/)'
+2024-09-20 02:34:09.485 +03:30 [INF] Executed endpoint '/ (/)'
+2024-09-20 02:34:09.489 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/ - 200 null text/html; charset=utf-8 234.7057ms
+2024-09-20 02:34:09.493 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-20 02:34:09.493 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/blazor.web.js - null null
+2024-09-20 02:34:09.501 +03:30 [INF] Executing endpoint 'Blazor web static files'
+2024-09-20 02:34:09.521 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - 200 13795 application/javascript; charset=utf-8 28.3934ms
+2024-09-20 02:34:09.524 +03:30 [INF] The file /_framework/blazor.web.js was not modified
+2024-09-20 02:34:09.526 +03:30 [INF] Executed endpoint 'Blazor web static files'
+2024-09-20 02:34:09.527 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_vs/browserLink - null null
+2024-09-20 02:34:09.527 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/blazor.web.js - 304 null text/javascript 33.9642ms
+2024-09-20 02:34:09.562 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.5632ms
+2024-09-20 02:34:41.510 +03:30 [INF] Application Started  ...
+2024-09-20 02:34:42.351 +03:30 [INF] User profile is available. Using 'C:\Users\Tajer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-20 02:34:42.805 +03:30 [INF] Now listening on: https://localhost:7224
+2024-09-20 02:34:42.806 +03:30 [INF] Now listening on: http://localhost:5274
+2024-09-20 02:34:42.810 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-20 02:34:42.811 +03:30 [INF] Hosting environment: Development
+2024-09-20 02:34:42.811 +03:30 [INF] Content root path: C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi
+2024-09-20 02:34:44.035 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/ - null null
+2024-09-20 02:34:44.209 +03:30 [INF] Executing endpoint '/ (/)'
+2024-09-20 02:34:44.294 +03:30 [INF] Executed endpoint '/ (/)'
+2024-09-20 02:34:44.300 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/ - 200 null text/html; charset=utf-8 268.968ms
+2024-09-20 02:34:44.326 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/app.css - null null
+2024-09-20 02:34:44.326 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/blazor.web.js - null null
+2024-09-20 02:34:44.326 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/bootstrap/bootstrap.min.css - null null
+2024-09-20 02:34:44.326 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/CleanArchitectureBlazor.AppApi.styles.css - null null
+2024-09-20 02:34:44.326 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_vs/browserLink - null null
+2024-09-20 02:34:44.341 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-20 02:34:44.372 +03:30 [INF] Executing endpoint 'Blazor web static files'
+2024-09-20 02:34:44.403 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/aspnetcore-browser-refresh.js - 200 13795 application/javascript; charset=utf-8 62.0028ms
+2024-09-20 02:34:44.407 +03:30 [INF] Sending file. Request path: '/CleanArchitectureBlazor.AppApi.styles.css'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi\obj\Debug\net8.0\scopedcss\bundle\CleanArchitectureBlazor.AppApi.styles.css'
+2024-09-20 02:34:44.411 +03:30 [INF] Sending file. Request path: '/bootstrap/bootstrap.min.css'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi\wwwroot\bootstrap\bootstrap.min.css'
+2024-09-20 02:34:44.407 +03:30 [INF] Sending file. Request path: '/app.css'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi\wwwroot\app.css'
+2024-09-20 02:34:44.408 +03:30 [INF] Sending file. Request path: '/_framework/blazor.web.js'. Physical path: 'N/A'
+2024-09-20 02:34:44.412 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/CleanArchitectureBlazor.AppApi.styles.css - 200 5943 text/css 85.7244ms
+2024-09-20 02:34:44.415 +03:30 [INF] Executed endpoint 'Blazor web static files'
+2024-09-20 02:34:44.413 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/app.css - 200 2591 text/css 87.5944ms
+2024-09-20 02:34:44.419 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/blazor.web.js - 200 187162 text/javascript 92.7485ms
+2024-09-20 02:34:44.412 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/bootstrap/bootstrap.min.css - 200 162720 text/css 86.348ms
+2024-09-20 02:34:44.428 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_vs/browserLink - 200 null text/javascript; charset=UTF-8 101.5798ms
+2024-09-20 02:34:44.446 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/favicon.png - null null
+2024-09-20 02:34:44.458 +03:30 [INF] Sending file. Request path: '/favicon.png'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi\wwwroot\favicon.png'
+2024-09-20 02:34:44.460 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/favicon.png - 200 1148 image/png 14.0198ms
+2024-09-20 02:34:47.028 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/counter - null null
+2024-09-20 02:34:47.056 +03:30 [INF] Executing endpoint '/counter (/counter)'
+2024-09-20 02:34:47.103 +03:30 [INF] Executed endpoint '/counter (/counter)'
+2024-09-20 02:34:47.104 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/counter - 200 null text/html; charset=utf-8 76.5879ms
+2024-09-20 02:34:47.109 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/dotnet.js - null null
+2024-09-20 02:34:47.112 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.125 +03:30 [INF] Sending file. Request path: '/_framework/dotnet.js.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.js.gz'
+2024-09-20 02:34:47.127 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.128 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/dotnet.js.gz - 200 11460 text/javascript 18.9037ms
+2024-09-20 02:34:47.132 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/blazor.boot.json - null null
+2024-09-20 02:34:47.134 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.137 +03:30 [INF] Sending file. Request path: '/_framework/blazor.boot.json.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json.gz'
+2024-09-20 02:34:47.138 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.138 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/blazor.boot.json.gz - 200 8935 application/json 6.6464ms
+2024-09-20 02:34:47.142 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/dotnet.runtime.8.0.7.ewbo6lul8v.js - null null
+2024-09-20 02:34:47.142 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/dotnet.native.8.0.7.0yxzr0t953.js - null null
+2024-09-20 02:34:47.143 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_blazor/initializers - null null
+2024-09-20 02:34:47.144 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.146 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.147 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.151 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.151 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_blazor/initializers - 200 null application/json; charset=utf-8 9.0583ms
+2024-09-20 02:34:47.155 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7224/_blazor/negotiate?negotiateVersion=1 - null 0
+2024-09-20 02:34:47.159 +03:30 [INF] Sending file. Request path: '/_framework/dotnet.native.8.0.7.0yxzr0t953.js.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.native.8.0.7.0yxzr0t953.js.gz'
+2024-09-20 02:34:47.159 +03:30 [INF] Sending file. Request path: '/_framework/dotnet.runtime.8.0.7.ewbo6lul8v.js.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.runtime.8.0.7.ewbo6lul8v.js.gz'
+2024-09-20 02:34:47.161 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.162 +03:30 [INF] CORS policy execution successful.
+2024-09-20 02:34:47.162 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.162 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/dotnet.native.8.0.7.0yxzr0t953.js.gz - 200 36158 text/javascript 20.1213ms
+2024-09-20 02:34:47.163 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/dotnet.runtime.8.0.7.ewbo6lul8v.js.gz - 200 64662 text/javascript 22.0094ms
+2024-09-20 02:34:47.164 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.173 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/dotnet.native.wasm - null null
+2024-09-20 02:34:47.174 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.175 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.176 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7224/_blazor/negotiate?negotiateVersion=1 - 200 316 application/json 21.6719ms
+2024-09-20 02:34:47.178 +03:30 [INF] Request starting HTTP/2 CONNECT https://localhost:7224/_blazor?id=9VOqKtLHi--5qVo3twXKiA - null null
+2024-09-20 02:34:47.180 +03:30 [INF] CORS policy execution successful.
+2024-09-20 02:34:47.181 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.214 +03:30 [INF] Sending file. Request path: '/_framework/dotnet.native.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\dotnet.native.wasm.gz'
+2024-09-20 02:34:47.216 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.217 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/dotnet.native.wasm.gz - 200 1153477 application/wasm 44.3322ms
+2024-09-20 02:34:47.219 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/appsettings.Development.json - null null
+2024-09-20 02:34:47.232 +03:30 [INF] Sending file. Request path: '/appsettings.Development.json'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\wwwroot\appsettings.Development.json'
+2024-09-20 02:34:47.233 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/appsettings.Development.json - 200 127 application/json 14.3697ms
+2024-09-20 02:34:47.236 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/appsettings.json - null null
+2024-09-20 02:34:47.241 +03:30 [INF] Sending file. Request path: '/appsettings.json'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\wwwroot\appsettings.json'
+2024-09-20 02:34:47.242 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/appsettings.json - 200 127 application/json 6.3332ms
+2024-09-20 02:34:47.245 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Authorization.wasm - null null
+2024-09-20 02:34:47.247 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.259 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.AspNetCore.Authorization.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.wasm.gz'
+2024-09-20 02:34:47.261 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.261 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Authorization.wasm.gz - 200 17627 application/wasm 17.0825ms
+2024-09-20 02:34:47.265 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Components.wasm - null null
+2024-09-20 02:34:47.268 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.282 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.AspNetCore.Components.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.wasm.gz'
+2024-09-20 02:34:47.283 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.284 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Components.wasm.gz - 200 129102 application/wasm 19.3276ms
+2024-09-20 02:34:47.290 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Components.Forms.wasm - null null
+2024-09-20 02:34:47.292 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.303 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.AspNetCore.Components.Forms.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.wasm.gz'
+2024-09-20 02:34:47.304 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.305 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Components.Forms.wasm.gz - 200 16292 application/wasm 15.1075ms
+2024-09-20 02:34:47.308 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Components.Web.wasm - null null
+2024-09-20 02:34:47.310 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.322 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.AspNetCore.Components.Web.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.wasm.gz'
+2024-09-20 02:34:47.323 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.324 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Components.Web.wasm.gz - 200 65088 application/wasm 15.814ms
+2024-09-20 02:34:47.329 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Components.WebAssembly.wasm - null null
+2024-09-20 02:34:47.331 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.342 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.AspNetCore.Components.WebAssembly.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.wasm.gz'
+2024-09-20 02:34:47.343 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.344 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Components.WebAssembly.wasm.gz - 200 46097 application/wasm 15.6784ms
+2024-09-20 02:34:47.348 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Metadata.wasm - null null
+2024-09-20 02:34:47.351 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.362 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.AspNetCore.Metadata.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Metadata.wasm.gz'
+2024-09-20 02:34:47.364 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.368 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.AspNetCore.Metadata.wasm.gz - 200 2403 application/wasm 20.1059ms
+2024-09-20 02:34:47.395 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.wasm - null null
+2024-09-20 02:34:47.402 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.415 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.Configuration.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.wasm.gz'
+2024-09-20 02:34:47.416 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.417 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.wasm.gz - 200 15095 application/wasm 22.2834ms
+2024-09-20 02:34:47.423 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.Abstractions.wasm - null null
+2024-09-20 02:34:47.428 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.441 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.Configuration.Abstractions.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Abstractions.wasm.gz'
+2024-09-20 02:34:47.442 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.443 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.Abstractions.wasm.gz - 200 7793 application/wasm 20.4831ms
+2024-09-20 02:34:47.448 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.Binder.wasm - null null
+2024-09-20 02:34:47.450 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.465 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.Configuration.Binder.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Binder.wasm.gz'
+2024-09-20 02:34:47.466 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.467 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.Binder.wasm.gz - 200 13809 application/wasm 19.5563ms
+2024-09-20 02:34:47.472 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.FileExtensions.wasm - null null
+2024-09-20 02:34:47.475 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.497 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.Configuration.FileExtensions.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.FileExtensions.wasm.gz'
+2024-09-20 02:34:47.498 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.499 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.FileExtensions.wasm.gz - 200 7801 application/wasm 27.1308ms
+2024-09-20 02:34:47.504 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.Json.wasm - null null
+2024-09-20 02:34:47.506 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.520 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.Configuration.Json.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Json.wasm.gz'
+2024-09-20 02:34:47.521 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.522 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Configuration.Json.wasm.gz - 200 7500 application/wasm 18.5999ms
+2024-09-20 02:34:47.526 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.DependencyInjection.wasm - null null
+2024-09-20 02:34:47.528 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.540 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.DependencyInjection.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.wasm.gz'
+2024-09-20 02:34:47.542 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.543 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.DependencyInjection.wasm.gz - 200 34988 application/wasm 17.0084ms
+2024-09-20 02:34:47.548 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.DependencyInjection.Abstractions.wasm - null null
+2024-09-20 02:34:47.551 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.562 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.DependencyInjection.Abstractions.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.Abstractions.wasm.gz'
+2024-09-20 02:34:47.563 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.564 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.DependencyInjection.Abstractions.wasm.gz - 200 20760 application/wasm 15.939ms
+2024-09-20 02:34:47.568 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.FileProviders.Abstractions.wasm - null null
+2024-09-20 02:34:47.570 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.580 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.FileProviders.Abstractions.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Abstractions.wasm.gz'
+2024-09-20 02:34:47.581 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.582 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.FileProviders.Abstractions.wasm.gz - 200 5094 application/wasm 14.9361ms
+2024-09-20 02:34:47.586 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.FileProviders.Physical.wasm - null null
+2024-09-20 02:34:47.588 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.599 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.FileProviders.Physical.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Physical.wasm.gz'
+2024-09-20 02:34:47.601 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.602 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.FileProviders.Physical.wasm.gz - 200 16310 application/wasm 16.5575ms
+2024-09-20 02:34:47.607 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.FileSystemGlobbing.wasm - null null
+2024-09-20 02:34:47.609 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.623 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.FileSystemGlobbing.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.FileSystemGlobbing.wasm.gz'
+2024-09-20 02:34:47.626 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.628 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.FileSystemGlobbing.wasm.gz - 200 16109 application/wasm 21.6175ms
+2024-09-20 02:34:47.631 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/weather - null null
+2024-09-20 02:34:47.636 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Logging.wasm - null null
+2024-09-20 02:34:47.821 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.831 +03:30 [INF] Executing endpoint '/weather (/weather)'
+2024-09-20 02:34:47.841 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.Logging.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Logging.wasm.gz'
+2024-09-20 02:34:47.842 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.843 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Logging.wasm.gz - 200 18418 application/wasm 207.7722ms
+2024-09-20 02:34:47.846 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Logging.Abstractions.wasm - null null
+2024-09-20 02:34:47.849 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.862 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.Logging.Abstractions.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Logging.Abstractions.wasm.gz'
+2024-09-20 02:34:47.863 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.864 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Logging.Abstractions.wasm.gz - 200 23639 application/wasm 17.539ms
+2024-09-20 02:34:47.867 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Options.wasm - null null
+2024-09-20 02:34:47.869 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.881 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.Options.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Options.wasm.gz'
+2024-09-20 02:34:47.882 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.883 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Options.wasm.gz - 200 23295 application/wasm 16.202ms
+2024-09-20 02:34:47.886 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Primitives.wasm - null null
+2024-09-20 02:34:47.888 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.898 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Extensions.Primitives.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Primitives.wasm.gz'
+2024-09-20 02:34:47.899 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.900 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Extensions.Primitives.wasm.gz - 200 14733 application/wasm 13.8603ms
+2024-09-20 02:34:47.902 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.JSInterop.wasm - null null
+2024-09-20 02:34:47.904 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.913 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.JSInterop.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.JSInterop.wasm.gz'
+2024-09-20 02:34:47.914 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.915 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.JSInterop.wasm.gz - 200 24031 application/wasm 13.376ms
+2024-09-20 02:34:47.918 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.JSInterop.WebAssembly.wasm - null null
+2024-09-20 02:34:47.920 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.929 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.JSInterop.WebAssembly.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.wasm.gz'
+2024-09-20 02:34:47.930 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.931 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.JSInterop.WebAssembly.wasm.gz - 200 6761 application/wasm 13.4269ms
+2024-09-20 02:34:47.934 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.Pipelines.wasm - null null
+2024-09-20 02:34:47.935 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.945 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Pipelines.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Pipelines.wasm.gz'
+2024-09-20 02:34:47.946 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.947 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.Pipelines.wasm.gz - 200 29719 application/wasm 13.6787ms
+2024-09-20 02:34:47.950 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.CSharp.wasm - null null
+2024-09-20 02:34:47.952 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.964 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.CSharp.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.CSharp.wasm.gz'
+2024-09-20 02:34:47.965 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.966 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.CSharp.wasm.gz - 200 131198 application/wasm 16.004ms
+2024-09-20 02:34:47.970 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.VisualBasic.Core.wasm - null null
+2024-09-20 02:34:47.971 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.986 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.VisualBasic.Core.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.VisualBasic.Core.wasm.gz'
+2024-09-20 02:34:47.987 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:47.988 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.VisualBasic.Core.wasm.gz - 200 166939 application/wasm 18.6032ms
+2024-09-20 02:34:47.992 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.VisualBasic.wasm - null null
+2024-09-20 02:34:47.995 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.003 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.VisualBasic.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.VisualBasic.wasm.gz'
+2024-09-20 02:34:48.005 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.006 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.VisualBasic.wasm.gz - 200 2850 application/wasm 13.4412ms
+2024-09-20 02:34:48.008 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Win32.Primitives.wasm - null null
+2024-09-20 02:34:48.010 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.019 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Win32.Primitives.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Win32.Primitives.wasm.gz'
+2024-09-20 02:34:48.020 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.020 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Win32.Primitives.wasm.gz - 200 2198 application/wasm 12.3668ms
+2024-09-20 02:34:48.023 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/Microsoft.Win32.Registry.wasm - null null
+2024-09-20 02:34:48.025 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.035 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Win32.Registry.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Win32.Registry.wasm.gz'
+2024-09-20 02:34:48.036 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.037 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/Microsoft.Win32.Registry.wasm.gz - 200 8531 application/wasm 14.5187ms
+2024-09-20 02:34:48.040 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.AppContext.wasm - null null
+2024-09-20 02:34:48.042 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.052 +03:30 [INF] Sending file. Request path: '/_framework/System.AppContext.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.AppContext.wasm.gz'
+2024-09-20 02:34:48.054 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.055 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.AppContext.wasm.gz - 200 2091 application/wasm 14.6467ms
+2024-09-20 02:34:48.057 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Buffers.wasm - null null
+2024-09-20 02:34:48.059 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.067 +03:30 [INF] Sending file. Request path: '/_framework/System.Buffers.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Buffers.wasm.gz'
+2024-09-20 02:34:48.069 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.069 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Buffers.wasm.gz - 200 2095 application/wasm 12.2974ms
+2024-09-20 02:34:48.072 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Collections.Concurrent.wasm - null null
+2024-09-20 02:34:48.074 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.083 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.Concurrent.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.Concurrent.wasm.gz'
+2024-09-20 02:34:48.084 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.085 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Collections.Concurrent.wasm.gz - 200 32307 application/wasm 12.7742ms
+2024-09-20 02:34:48.088 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Collections.Immutable.wasm - null null
+2024-09-20 02:34:48.089 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.101 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.Immutable.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.Immutable.wasm.gz'
+2024-09-20 02:34:48.102 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.102 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Collections.Immutable.wasm.gz - 200 95455 application/wasm 14.7308ms
+2024-09-20 02:34:48.105 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Collections.NonGeneric.wasm - null null
+2024-09-20 02:34:48.107 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.115 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.NonGeneric.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.NonGeneric.wasm.gz'
+2024-09-20 02:34:48.116 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.117 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Collections.NonGeneric.wasm.gz - 200 14129 application/wasm 12.2293ms
+2024-09-20 02:34:48.120 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Collections.Specialized.wasm - null null
+2024-09-20 02:34:48.122 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.130 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.Specialized.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.Specialized.wasm.gz'
+2024-09-20 02:34:48.131 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.132 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Collections.Specialized.wasm.gz - 200 16034 application/wasm 12.5981ms
+2024-09-20 02:34:48.135 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Collections.wasm - null null
+2024-09-20 02:34:48.137 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.146 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.wasm.gz'
+2024-09-20 02:34:48.147 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.148 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Collections.wasm.gz - 200 38914 application/wasm 13.0092ms
+2024-09-20 02:34:48.150 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.Annotations.wasm - null null
+2024-09-20 02:34:48.152 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.161 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.Annotations.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.Annotations.wasm.gz'
+2024-09-20 02:34:48.162 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.163 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.Annotations.wasm.gz - 200 35245 application/wasm 13.133ms
+2024-09-20 02:34:48.166 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.DataAnnotations.wasm - null null
+2024-09-20 02:34:48.168 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.176 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.DataAnnotations.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.DataAnnotations.wasm.gz'
+2024-09-20 02:34:48.177 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.178 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.DataAnnotations.wasm.gz - 200 2560 application/wasm 12.0918ms
+2024-09-20 02:34:48.180 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.EventBasedAsync.wasm - null null
+2024-09-20 02:34:48.182 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.190 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.EventBasedAsync.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.EventBasedAsync.wasm.gz'
+2024-09-20 02:34:48.191 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.192 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.EventBasedAsync.wasm.gz - 200 6774 application/wasm 11.6835ms
+2024-09-20 02:34:48.195 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.Primitives.wasm - null null
+2024-09-20 02:34:48.197 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.207 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.Primitives.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.Primitives.wasm.gz'
+2024-09-20 02:34:48.207 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.208 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.Primitives.wasm.gz - 200 13070 application/wasm 13.4254ms
+2024-09-20 02:34:48.211 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.TypeConverter.wasm - null null
+2024-09-20 02:34:48.212 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.224 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.TypeConverter.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.TypeConverter.wasm.gz'
+2024-09-20 02:34:48.225 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.225 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.TypeConverter.wasm.gz - 200 117698 application/wasm 15.0271ms
+2024-09-20 02:34:48.229 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.wasm - null null
+2024-09-20 02:34:48.231 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.239 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.wasm.gz'
+2024-09-20 02:34:48.240 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.241 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.ComponentModel.wasm.gz - 200 2550 application/wasm 12.6288ms
+2024-09-20 02:34:48.244 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Configuration.wasm - null null
+2024-09-20 02:34:48.245 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.253 +03:30 [INF] Sending file. Request path: '/_framework/System.Configuration.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Configuration.wasm.gz'
+2024-09-20 02:34:48.254 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.255 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Configuration.wasm.gz - 200 3096 application/wasm 11.8482ms
+2024-09-20 02:34:48.258 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Console.wasm - null null
+2024-09-20 02:34:48.259 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.269 +03:30 [INF] Sending file. Request path: '/_framework/System.Console.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Console.wasm.gz'
+2024-09-20 02:34:48.270 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.271 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Console.wasm.gz - 200 19799 application/wasm 13.3859ms
+2024-09-20 02:34:48.273 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Core.wasm - null null
+2024-09-20 02:34:48.275 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.285 +03:30 [INF] Sending file. Request path: '/_framework/System.Core.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Core.wasm.gz'
+2024-09-20 02:34:48.286 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.286 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Core.wasm.gz - 200 4533 application/wasm 13.3233ms
+2024-09-20 02:34:48.289 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Data.Common.wasm - null null
+2024-09-20 02:34:48.291 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.308 +03:30 [INF] Sending file. Request path: '/_framework/System.Data.Common.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Data.Common.wasm.gz'
+2024-09-20 02:34:48.309 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.309 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Data.Common.wasm.gz - 200 376206 application/wasm 20.6617ms
+2024-09-20 02:34:48.314 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Data.DataSetExtensions.wasm - null null
+2024-09-20 02:34:48.316 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.324 +03:30 [INF] Sending file. Request path: '/_framework/System.Data.DataSetExtensions.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Data.DataSetExtensions.wasm.gz'
+2024-09-20 02:34:48.325 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.326 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Data.DataSetExtensions.wasm.gz - 200 2061 application/wasm 11.5586ms
+2024-09-20 02:34:48.328 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Data.wasm - null null
+2024-09-20 02:34:48.330 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.339 +03:30 [INF] Sending file. Request path: '/_framework/System.Data.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Data.wasm.gz'
+2024-09-20 02:34:48.340 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.340 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Data.wasm.gz - 200 4980 application/wasm 12.4838ms
+2024-09-20 02:34:48.343 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Contracts.wasm - null null
+2024-09-20 02:34:48.345 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.353 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Contracts.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.Contracts.wasm.gz'
+2024-09-20 02:34:48.354 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.355 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Contracts.wasm.gz - 200 2378 application/wasm 11.9829ms
+2024-09-20 02:34:48.357 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Debug.wasm - null null
+2024-09-20 02:34:48.359 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.367 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Debug.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.Debug.wasm.gz'
+2024-09-20 02:34:48.369 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.369 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Debug.wasm.gz - 200 2262 application/wasm 12.6207ms
+2024-09-20 02:34:48.372 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.DiagnosticSource.wasm - null null
+2024-09-20 02:34:48.374 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.383 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.DiagnosticSource.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.DiagnosticSource.wasm.gz'
+2024-09-20 02:34:48.384 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.385 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.DiagnosticSource.wasm.gz - 200 65133 application/wasm 13.1735ms
+2024-09-20 02:34:48.388 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.FileVersionInfo.wasm - null null
+2024-09-20 02:34:48.389 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.390 +03:30 [INF] Executed endpoint '/weather (/weather)'
+2024-09-20 02:34:48.392 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/weather - 200 null text/html; charset=utf-8 761.0298ms
+2024-09-20 02:34:48.399 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.FileVersionInfo.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.FileVersionInfo.wasm.gz'
+2024-09-20 02:34:48.400 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.401 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.FileVersionInfo.wasm.gz - 200 4539 application/wasm 13.7175ms
+2024-09-20 02:34:48.404 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Process.wasm - null null
+2024-09-20 02:34:48.405 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.414 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Process.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.Process.wasm.gz'
+2024-09-20 02:34:48.415 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.416 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Process.wasm.gz - 200 15500 application/wasm 12.7593ms
+2024-09-20 02:34:48.420 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.StackTrace.wasm - null null
+2024-09-20 02:34:48.421 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.430 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.StackTrace.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.StackTrace.wasm.gz'
+2024-09-20 02:34:48.431 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.432 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.StackTrace.wasm.gz - 200 7327 application/wasm 12.682ms
+2024-09-20 02:34:48.435 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.TextWriterTraceListener.wasm - null null
+2024-09-20 02:34:48.437 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.446 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.TextWriterTraceListener.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.TextWriterTraceListener.wasm.gz'
+2024-09-20 02:34:48.447 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.447 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.TextWriterTraceListener.wasm.gz - 200 9380 application/wasm 12.7378ms
+2024-09-20 02:34:48.450 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Tools.wasm - null null
+2024-09-20 02:34:48.451 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.460 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Tools.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.Tools.wasm.gz'
+2024-09-20 02:34:48.461 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.462 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Tools.wasm.gz - 200 2165 application/wasm 13.0268ms
+2024-09-20 02:34:48.465 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.TraceSource.wasm - null null
+2024-09-20 02:34:48.467 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.476 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.TraceSource.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.TraceSource.wasm.gz'
+2024-09-20 02:34:48.477 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.478 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.TraceSource.wasm.gz - 200 19518 application/wasm 13.4664ms
+2024-09-20 02:34:48.481 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Tracing.wasm - null null
+2024-09-20 02:34:48.482 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.491 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Tracing.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.Tracing.wasm.gz'
+2024-09-20 02:34:48.492 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.493 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Diagnostics.Tracing.wasm.gz - 200 2495 application/wasm 12.4056ms
+2024-09-20 02:34:48.496 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Drawing.Primitives.wasm - null null
+2024-09-20 02:34:48.498 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.508 +03:30 [INF] Sending file. Request path: '/_framework/System.Drawing.Primitives.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Drawing.Primitives.wasm.gz'
+2024-09-20 02:34:48.509 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.510 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Drawing.Primitives.wasm.gz - 200 23202 application/wasm 14.0147ms
+2024-09-20 02:34:48.513 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Drawing.wasm - null null
+2024-09-20 02:34:48.515 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.524 +03:30 [INF] Sending file. Request path: '/_framework/System.Drawing.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Drawing.wasm.gz'
+2024-09-20 02:34:48.525 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.526 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Drawing.wasm.gz - 200 3833 application/wasm 12.8179ms
+2024-09-20 02:34:48.528 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Dynamic.Runtime.wasm - null null
+2024-09-20 02:34:48.530 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.541 +03:30 [INF] Sending file. Request path: '/_framework/System.Dynamic.Runtime.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Dynamic.Runtime.wasm.gz'
+2024-09-20 02:34:48.543 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.544 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Dynamic.Runtime.wasm.gz - 200 2427 application/wasm 15.9205ms
+2024-09-20 02:34:48.546 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Formats.Asn1.wasm - null null
+2024-09-20 02:34:48.548 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.558 +03:30 [INF] Sending file. Request path: '/_framework/System.Formats.Asn1.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Formats.Asn1.wasm.gz'
+2024-09-20 02:34:48.559 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.559 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Formats.Asn1.wasm.gz - 200 35443 application/wasm 13.7603ms
+2024-09-20 02:34:48.562 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Formats.Tar.wasm - null null
+2024-09-20 02:34:48.563 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.572 +03:30 [INF] Sending file. Request path: '/_framework/System.Formats.Tar.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Formats.Tar.wasm.gz'
+2024-09-20 02:34:48.573 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.574 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Formats.Tar.wasm.gz - 200 9784 application/wasm 12.3825ms
+2024-09-20 02:34:48.576 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Globalization.Calendars.wasm - null null
+2024-09-20 02:34:48.578 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.587 +03:30 [INF] Sending file. Request path: '/_framework/System.Globalization.Calendars.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Globalization.Calendars.wasm.gz'
+2024-09-20 02:34:48.588 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.589 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Globalization.Calendars.wasm.gz - 200 2279 application/wasm 12.8367ms
+2024-09-20 02:34:48.591 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Globalization.Extensions.wasm - null null
+2024-09-20 02:34:48.593 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.601 +03:30 [INF] Sending file. Request path: '/_framework/System.Globalization.Extensions.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Globalization.Extensions.wasm.gz'
+2024-09-20 02:34:48.602 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.603 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Globalization.Extensions.wasm.gz - 200 2159 application/wasm 11.8414ms
+2024-09-20 02:34:48.605 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Globalization.wasm - null null
+2024-09-20 02:34:48.607 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.615 +03:30 [INF] Sending file. Request path: '/_framework/System.Globalization.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Globalization.wasm.gz'
+2024-09-20 02:34:48.616 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.617 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Globalization.wasm.gz - 200 2248 application/wasm 12.0767ms
+2024-09-20 02:34:48.619 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.Compression.Brotli.wasm - null null
+2024-09-20 02:34:48.621 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.630 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Compression.Brotli.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Compression.Brotli.wasm.gz'
+2024-09-20 02:34:48.631 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.632 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.Compression.Brotli.wasm.gz - 200 6262 application/wasm 12.5405ms
+2024-09-20 02:34:48.635 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.Compression.FileSystem.wasm - null null
+2024-09-20 02:34:48.636 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.645 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Compression.FileSystem.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Compression.FileSystem.wasm.gz'
+2024-09-20 02:34:48.646 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.646 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.Compression.FileSystem.wasm.gz - 200 1978 application/wasm 12.1495ms
+2024-09-20 02:34:48.649 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.Compression.ZipFile.wasm - null null
+2024-09-20 02:34:48.651 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.661 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Compression.ZipFile.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Compression.ZipFile.wasm.gz'
+2024-09-20 02:34:48.662 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.663 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.Compression.ZipFile.wasm.gz - 200 12138 application/wasm 13.7367ms
+2024-09-20 02:34:48.665 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.Compression.wasm - null null
+2024-09-20 02:34:48.667 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.676 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Compression.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Compression.wasm.gz'
+2024-09-20 02:34:48.677 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.678 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.Compression.wasm.gz - 200 42006 application/wasm 13.0474ms
+2024-09-20 02:34:48.681 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.AccessControl.wasm - null null
+2024-09-20 02:34:48.683 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.692 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.AccessControl.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.FileSystem.AccessControl.wasm.gz'
+2024-09-20 02:34:48.693 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.694 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.AccessControl.wasm.gz - 200 7891 application/wasm 13.005ms
+2024-09-20 02:34:48.696 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.DriveInfo.wasm - null null
+2024-09-20 02:34:48.698 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.706 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.DriveInfo.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.FileSystem.DriveInfo.wasm.gz'
+2024-09-20 02:34:48.707 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.708 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.DriveInfo.wasm.gz - 200 5589 application/wasm 11.9282ms
+2024-09-20 02:34:48.710 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.Primitives.wasm - null null
+2024-09-20 02:34:48.712 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.721 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.Primitives.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.FileSystem.Primitives.wasm.gz'
+2024-09-20 02:34:48.723 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.724 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.Primitives.wasm.gz - 200 2165 application/wasm 13.6502ms
+2024-09-20 02:34:48.726 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.Watcher.wasm - null null
+2024-09-20 02:34:48.728 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.736 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.Watcher.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.FileSystem.Watcher.wasm.gz'
+2024-09-20 02:34:48.737 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.738 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.Watcher.wasm.gz - 200 8185 application/wasm 12.7418ms
+2024-09-20 02:34:48.741 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.wasm - null null
+2024-09-20 02:34:48.742 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.750 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.FileSystem.wasm.gz'
+2024-09-20 02:34:48.751 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.752 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.FileSystem.wasm.gz - 200 2285 application/wasm 11.7691ms
+2024-09-20 02:34:48.755 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.IsolatedStorage.wasm - null null
+2024-09-20 02:34:48.756 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.764 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.IsolatedStorage.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.IsolatedStorage.wasm.gz'
+2024-09-20 02:34:48.765 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.766 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.IsolatedStorage.wasm.gz - 200 8778 application/wasm 11.7531ms
+2024-09-20 02:34:48.774 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/ - null null
+2024-09-20 02:34:48.775 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.MemoryMappedFiles.wasm - null null
+2024-09-20 02:34:48.790 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.790 +03:30 [INF] Executing endpoint '/ (/)'
+2024-09-20 02:34:48.792 +03:30 [INF] Executed endpoint '/ (/)'
+2024-09-20 02:34:48.793 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/ - 200 null text/html; charset=utf-8 19.5048ms
+2024-09-20 02:34:48.799 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.MemoryMappedFiles.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.MemoryMappedFiles.wasm.gz'
+2024-09-20 02:34:48.800 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.801 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.MemoryMappedFiles.wasm.gz - 200 16329 application/wasm 26.4912ms
+2024-09-20 02:34:48.804 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.Pipes.AccessControl.wasm - null null
+2024-09-20 02:34:48.806 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.814 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Pipes.AccessControl.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Pipes.AccessControl.wasm.gz'
+2024-09-20 02:34:48.815 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.816 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.Pipes.AccessControl.wasm.gz - 200 5293 application/wasm 12.3413ms
+2024-09-20 02:34:48.819 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.Pipes.wasm - null null
+2024-09-20 02:34:48.820 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.829 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Pipes.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Pipes.wasm.gz'
+2024-09-20 02:34:48.829 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.830 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.Pipes.wasm.gz - 200 10461 application/wasm 11.8809ms
+2024-09-20 02:34:48.833 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.UnmanagedMemoryStream.wasm - null null
+2024-09-20 02:34:48.834 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.843 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.UnmanagedMemoryStream.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.UnmanagedMemoryStream.wasm.gz'
+2024-09-20 02:34:48.844 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.845 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.UnmanagedMemoryStream.wasm.gz - 200 2191 application/wasm 12.2493ms
+2024-09-20 02:34:48.847 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.IO.wasm - null null
+2024-09-20 02:34:48.849 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.858 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.wasm.gz'
+2024-09-20 02:34:48.859 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.860 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.IO.wasm.gz - 200 2243 application/wasm 13.3994ms
+2024-09-20 02:34:48.863 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Linq.Expressions.wasm - null null
+2024-09-20 02:34:48.864 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.882 +03:30 [INF] Sending file. Request path: '/_framework/System.Linq.Expressions.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Linq.Expressions.wasm.gz'
+2024-09-20 02:34:48.883 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.883 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Linq.Expressions.wasm.gz - 200 213339 application/wasm 21.1067ms
+2024-09-20 02:34:48.888 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Linq.Parallel.wasm - null null
+2024-09-20 02:34:48.890 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.901 +03:30 [INF] Sending file. Request path: '/_framework/System.Linq.Parallel.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Linq.Parallel.wasm.gz'
+2024-09-20 02:34:48.901 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.902 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Linq.Parallel.wasm.gz - 200 86884 application/wasm 14.6431ms
+2024-09-20 02:34:48.907 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Linq.Queryable.wasm - null null
+2024-09-20 02:34:48.908 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.918 +03:30 [INF] Sending file. Request path: '/_framework/System.Linq.Queryable.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Linq.Queryable.wasm.gz'
+2024-09-20 02:34:48.919 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.919 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Linq.Queryable.wasm.gz - 200 19919 application/wasm 13.2036ms
+2024-09-20 02:34:48.923 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Linq.wasm - null null
+2024-09-20 02:34:48.925 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.936 +03:30 [INF] Sending file. Request path: '/_framework/System.Linq.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Linq.wasm.gz'
+2024-09-20 02:34:48.937 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.937 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Linq.wasm.gz - 200 50142 application/wasm 14.9808ms
+2024-09-20 02:34:48.942 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Memory.wasm - null null
+2024-09-20 02:34:48.943 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.952 +03:30 [INF] Sending file. Request path: '/_framework/System.Memory.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Memory.wasm.gz'
+2024-09-20 02:34:48.953 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.954 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Memory.wasm.gz - 200 20339 application/wasm 12.571ms
+2024-09-20 02:34:48.957 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Net.Http.Json.wasm - null null
+2024-09-20 02:34:48.959 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.967 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Http.Json.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.Http.Json.wasm.gz'
+2024-09-20 02:34:48.969 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.969 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Net.Http.Json.wasm.gz - 200 19090 application/wasm 12.4302ms
+2024-09-20 02:34:48.971 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Net.Http.wasm - null null
+2024-09-20 02:34:48.973 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.984 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Http.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.Http.wasm.gz'
+2024-09-20 02:34:48.985 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:48.986 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Net.Http.wasm.gz - 200 110878 application/wasm 14.495ms
+2024-09-20 02:34:48.990 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Net.HttpListener.wasm - null null
+2024-09-20 02:34:48.991 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:49.000 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.HttpListener.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.HttpListener.wasm.gz'
+2024-09-20 02:34:49.001 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:49.001 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Net.HttpListener.wasm.gz - 200 15433 application/wasm 11.7836ms
+2024-09-20 02:34:49.004 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Net.Mail.wasm - null null
+2024-09-20 02:34:49.005 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:49.016 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Mail.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.Mail.wasm.gz'
+2024-09-20 02:34:49.017 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:49.017 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Net.Mail.wasm.gz - 200 41419 application/wasm 13.8919ms
+2024-09-20 02:34:49.020 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7224/_framework/System.Net.NameResolution.wasm - null null
+2024-09-20 02:34:49.022 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:49.031 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.NameResolution.wasm.gz'. Physical path: 'C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitectureBlazor\Source\3.EndPoints\CleanArchitectureBlazor.AppApi.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.NameResolution.wasm.gz'
+2024-09-20 02:34:49.032 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:49.033 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7224/_framework/System.Net.NameResolution.wasm.gz - 200 5341 application/wasm 12.6959ms
+2024-09-20 02:34:49.859 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:49.860 +03:30 [INF] Request finished HTTP/2 CONNECT https://localhost:7224/_blazor?id=9VOqKtLHi--5qVo3twXKiA - 200 null null 2681.5191ms
+2024-09-20 02:34:49.864 +03:30 [INF] Connection id "0HN6OVTP80H7G", Request id "0HN6OVTP80H7G:0000002F": the application completed without reading the entire request body.
+2024-09-20 02:34:49.864 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7224/_blazor/disconnect - multipart/form-data; boundary=---------------------------108166540938493391842617238753 397
+2024-09-20 02:34:49.867 +03:30 [INF] CORS policy execution successful.
+2024-09-20 02:34:49.867 +03:30 [INF] Executing endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:49.880 +03:30 [INF] Executed endpoint 'Microsoft.AspNetCore.Routing.RouteEndpoint'
+2024-09-20 02:34:49.881 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7224/_blazor/disconnect - 200 0 null 16.7701ms
