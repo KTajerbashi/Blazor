@@ -4,13 +4,17 @@ using CleanArchitectureBlazor.Core.Domain.Entities.Setting;
 using CleanArchitectureBlazor.Infra.DataSql.BaseInfraData.Services;
 using CleanArchitectureBlazor.Infra.DataSql.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace CleanArchitectureBlazor.Infra.DataSql.Services.Setting;
 
 public class MenuService : BaseService<MenuEntity>, IMenuService
 {
-    public MenuService(DbContextApplication context) : base(context)
+    private readonly ILogger<MenuEntity> _logger;
+    public MenuService(DbContextApplication context, ILogger<MenuEntity> logger) : base(context)
     {
+        _logger = logger;
+        _logger.LogInformation("MenuService Started");
     }
 
     public async Task<IEnumerable<MenuProfileModel>> ReadProfileAsync()

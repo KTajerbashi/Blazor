@@ -1,8 +1,9 @@
 ﻿using CleanArchitectureBlazor.AppApi.Components;
 using CleanArchitectureBlazor.AppApi.Extensions;
 using CleanArchitectureBlazor.AppApi.Providers.Serilog;
+using CleanArchitectureBlazor.Core.ApplicationService.Extensions;
 using CleanArchitectureBlazor.Infra.DataSql.Extensions;
-using Serilog;
+
 namespace CleanArchitectureBlazor.AppApi.HostedExtensions;
 
 public static class HostedService
@@ -12,6 +13,8 @@ public static class HostedService
         IConfiguration configuration = builder.Configuration;
 
         builder.Services.AddMainServices();
+        
+        builder.Services.AddApplicationServices();
 
         builder.AddSerilogService(configuration, "Serilog");
 
@@ -35,6 +38,7 @@ public static class HostedService
         });
         builder.Services.AddControllers();
 
+
         return builder.Build();
     }
     public static WebApplication ConfigurationPipline(this WebApplication app)
@@ -49,6 +53,8 @@ public static class HostedService
         {
             app.UseWebAssemblyDebugging();
         }
+
+        app.UseSerilog();
 
         app.UseHttpsRedirection();
 

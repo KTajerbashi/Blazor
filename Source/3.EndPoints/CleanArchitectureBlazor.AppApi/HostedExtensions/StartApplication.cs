@@ -2,6 +2,7 @@
 
 namespace CleanArchitectureBlazor.AppApi.HostedExtensions;
 
+
 public class StartApplication
 {
     public static void RunProgram(Action action)
@@ -9,19 +10,15 @@ public class StartApplication
         try
         {
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Information()
-                .WriteTo.Console()
-                .WriteTo.File("log.txt",
-                rollingInterval: RollingInterval.Day,
-                rollOnFileSizeLimit: true)
-                .CreateLogger();
+                .WriteTo
+                .Console()
+                .CreateBootstrapLogger();
             Log.Information("Application Started  ...");
             action();
         }
         catch (Exception ex)
         {
-            Log.Warning($"Application Exception => {ex.Message}");
-            throw ex;
+            Log.Fatal($"Application Exception => {ex.Message}");
         }
         finally
         {

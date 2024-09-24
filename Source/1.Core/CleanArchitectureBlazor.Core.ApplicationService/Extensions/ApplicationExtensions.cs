@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CleanArchitectureBlazor.Core.ApplicationService.Repositories.Setting;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitectureBlazor.Core.ApplicationService.Extensions;
 
