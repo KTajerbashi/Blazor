@@ -5,6 +5,7 @@ using CleanArchitectureBlazor.Infra.DataSql.Context;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
+using System.Linq.Expressions;
 
 namespace CleanArchitectureBlazor.Infra.DataSql.BaseInfraData.Services;
 
@@ -12,9 +13,11 @@ public abstract class BaseService<TEntity> : UnitOfWork<DbContextApplication>, I
     where TEntity : class, IEntity
 {
     private readonly DbConnection _dbConnection;
+    private readonly DbSet<TEntity> _dbSet;
     protected BaseService(DbContextApplication context) : base(context)
     {
         _dbConnection = Context.Database.GetDbConnection();
+        _dbSet = Context.Set<TEntity>();
     }
 
     public void Delete(Guid key)
@@ -52,6 +55,24 @@ public abstract class BaseService<TEntity> : UnitOfWork<DbContextApplication>, I
     public async Task<TEntity> GetAsync(long id) => await Context.Set<TEntity>().FindAsync(id);
 
     public async Task<IEnumerable<TEntity>> GetAsync() => await Context.Set<TEntity>().Where(item => !item.IsDeleted && item.IsActive).ToListAsync();
+
+    public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> where = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includes = "")
+    {
+        IQueryable<TEntity> query = _dbSet;
+        if (where is not null)
+            query.Where(where);
+        if (orderBy is not null)
+            query = orderBy(query);
+        if (!string.IsNullOrEmpty(includes))
+        {
+            foreach (string include in includes.Split(','))
+            {
+                query = query.Include(include);
+            }
+        }
+
+        return await query.ToListAsync();
+    }
 
     public Guid Insert(TEntity entity)
     {

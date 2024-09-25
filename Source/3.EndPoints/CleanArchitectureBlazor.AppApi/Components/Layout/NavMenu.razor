@@ -1,6 +1,8 @@
 ﻿@using CleanArchitectureBlazor.Core.ApplicationService.Models.Setting.Menu
 @using CleanArchitectureBlazor.Core.ApplicationService.Repositories.Setting
 @inject IMenuService _menuService;
+
+
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Tajerbashi</a>
@@ -16,7 +18,11 @@
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Dashboard
             </NavLink>
         </div>
-        @if (Menus.Count > 0)
+        @if (Menus is null)
+        {
+            <h1>Loading ...</h1>
+        }
+        else
         {
             foreach (var item in Menus)
             {
@@ -31,7 +37,7 @@
 </div>
 
 @code {
-    private List<MenuProfileModel> Menus = new List<MenuProfileModel>();
+    private List<MenuProfileModel> Menus;
 
     // Invoked once after the component has been initialized
     protected override async Task OnInitializedAsync()
