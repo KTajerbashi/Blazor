@@ -19,6 +19,8 @@ public interface IAggregateRepository<TAggregate, TId> : IUnitOfWork
     Task DeleteAsync(TAggregate aggregate,CancellationToken cancellationToken);
 
     string ContextId();
-    object Database();
+
+    void SaveChange();
+    Task SaveChangeAsync();
 
 }

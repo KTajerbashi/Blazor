@@ -1,6 +1,7 @@
 ﻿using CleanArchitectureBlazor.Core.Application.Categories;
 using CleanArchitectureBlazor.Core.Application.Products;
 using CleanArchitectureBlazor.Core.Domain.Products.Entities;
+using CleanArchitectureBlazor.Infra.Data.SqlServer.Categories;
 using CleanArchitectureBlazor.WebApp.Common.BaseApi;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,6 +35,7 @@ public class ProductController : BaseContorller
         try
         {
             var entity = await _repository.CreateAsync(new Product(title,description,price,categoryId),CancellationToken.None);
+            await _categoryRepository.SaveChangeAsync();
             _categoryRepository.CommitTransaction();
             return Ok(entity);
         }
@@ -45,9 +47,12 @@ public class ProductController : BaseContorller
     }
 
     [HttpPut]
-    public async Task<IActionResult> Update()
+    public async Task<IActionResult> Update(long productId,string title,int value)
     {
-        return Ok($"Updated {10}");
+        var entity = await _repository.GetAsync(productId,CancellationToken.None);
+        entity.AddDiscount(title, value);
+        await _repository.SaveChangeAsync();
+        return Ok(entity);
     }
 
     [HttpDelete("{key}")]

@@ -23,15 +23,12 @@ public class AggregateRepository<TContext, TAggregate, TId> : UnitOfWork<TContex
     {
         return Context.ContextId.InstanceId.ToString();
     }
-    public object Database()
-    {
-        return Context.Database;
-    }
+
 
     public async Task<TId> CreateAsync(TAggregate aggregate, CancellationToken cancellationToken)
     {
         await Context.Set<TAggregate>().AddAsync(aggregate, cancellationToken);
-        await Context.SaveChangesAsync(cancellationToken);
+        //await Context.SaveChangesAsync(cancellationToken);
         return aggregate.Id;
     }
 
@@ -46,12 +43,41 @@ public class AggregateRepository<TContext, TAggregate, TId> : UnitOfWork<TContex
     public async Task DeleteAsync(TAggregate aggregate, CancellationToken cancellationToken)
     {
         aggregate.Delete();
-        await Context.SaveChangesAsync(cancellationToken);
+        //await Context.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task<IEnumerable<TAggregate>> GetAsync(CancellationToken cancellationToken) => await Context.Set<TAggregate>().ToListAsync(cancellationToken);
-    public async Task<TAggregate> GetAsync(TId id, CancellationToken cancellationToken) => await Context.Set<TAggregate>().SingleAsync(item => item.Id!.Equals(id), cancellationToken);
-    public async Task<TAggregate> GetAsync(Guid key, CancellationToken cancellationToken) => await Context.Set<TAggregate>().SingleAsync(item => item.Key!.Equals(key), cancellationToken);
+    public async Task<IEnumerable<TAggregate>> GetAsync(CancellationToken cancellationToken)
+    {
+        List<string> includePath = Context.GetIncludePaths(typeof(TAggregate)).ToList();
+        IQueryable<TAggregate> query = Context.Set<TAggregate>().AsQueryable();
+        foreach (var item in includePath)
+        {
+            query = query.Include(item);
+        }
+        return await query.ToListAsync(cancellationToken);
+    }
+    public async Task<TAggregate> GetAsync(TId id, CancellationToken cancellationToken)
+    {
+        List<string> includePath = Context.GetIncludePaths(typeof(TAggregate)).ToList();
+        IQueryable<TAggregate> query = Context.Set<TAggregate>().AsQueryable();
+        foreach (var item in includePath)
+        {
+            query = query.Include(item);
+        }
+        return await query.SingleAsync(item => item.Id!.Equals(id), cancellationToken);
+    }
+    public async Task<TAggregate> GetAsync(Guid key, CancellationToken cancellationToken)
+    {
+        List<string> includePath = Context.GetIncludePaths(typeof(TAggregate)).ToList();
+        IQueryable<TAggregate> query = Context.Set<TAggregate>().AsQueryable();
+        foreach (var item in includePath)
+        {
+            query = query.Include(item);
+        }
+        return await query.SingleOrDefaultAsync(item => item.Key!.Equals(key), cancellationToken);
+    }
 
+    public void SaveChange() => Context.SaveChanges();
 
+    public async Task SaveChangeAsync() => await Context.SaveChangesAsync();
 }
