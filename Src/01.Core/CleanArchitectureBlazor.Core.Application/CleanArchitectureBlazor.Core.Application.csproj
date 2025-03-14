@@ -10,4 +10,17 @@
     <ProjectReference Include="..\CleanArchitectureBlazor.Core.Domain\CleanArchitectureBlazor.Core.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Customers\Models\" />
+    <Folder Include="Orders\Models\" />
+    <Folder Include="Categories\Models\" />
+    <Folder Include="Products\Models\" />
+  </ItemGroup>
+
 </Project>
