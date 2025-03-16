@@ -15,7 +15,7 @@ public class CategoryController : BaseContorller
     public async Task<IActionResult> Create(string title)
     {
         var entity = await _repository.CreateAsync(new Core.Domain.Categories.Entities.Category(title),CancellationToken.None);
-
+        await _repository.SaveChangeAsync();
         return Ok(entity);
     }
 
