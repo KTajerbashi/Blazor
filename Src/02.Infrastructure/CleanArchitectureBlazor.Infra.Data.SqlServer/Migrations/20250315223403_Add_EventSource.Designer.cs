@@ -4,6 +4,7 @@ using CleanArchitectureBlazor.Infra.Data.SqlServer.Common.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20250315223403_Add_EventSource")]
+    partial class Add_EventSource
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,9 +58,6 @@ namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Migrations
                     b.Property<long?>("UpdatedByUserId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Version")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Categories", "Business");
@@ -91,9 +91,6 @@ namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Migrations
 
                     b.Property<long?>("UpdatedByUserId")
                         .HasColumnType("bigint");
-
-                    b.Property<int>("Version")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -192,9 +189,6 @@ namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Migrations
                     b.Property<long?>("UpdatedByUserId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Version")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Orders", "Business");
@@ -262,9 +256,6 @@ namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Migrations
                     b.Property<long?>("UpdatedByUserId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("Version")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("EventOutboxs", "Business");
@@ -307,9 +298,6 @@ namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<int>("Value")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Version")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -361,9 +349,6 @@ namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Migrations
 
                     b.Property<long?>("UpdatedByUserId")
                         .HasColumnType("bigint");
-
-                    b.Property<int>("Version")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

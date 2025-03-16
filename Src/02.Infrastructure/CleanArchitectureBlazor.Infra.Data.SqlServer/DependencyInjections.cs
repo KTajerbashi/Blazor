@@ -41,6 +41,7 @@ public static class DependencyInjections
 
     private static IServiceCollection AddDependencies(this IServiceCollection services)
     {
+        services.AddScoped<IEventStore, EventStore>();
         return services;
     }
     private static IServiceCollection AddSingletonRepositories(this IServiceCollection services, Assembly[] assemblies)

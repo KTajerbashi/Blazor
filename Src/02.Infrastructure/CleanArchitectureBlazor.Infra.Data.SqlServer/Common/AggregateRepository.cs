@@ -4,7 +4,6 @@ using CleanArchitectureBlazor.Infra.Data.SqlServer.Common.DataBase;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Common;
-
 public class AggregateRepository<TContext, TAggregate, TId> : UnitOfWork<TContext>, IAggregateRepository<TAggregate, TId>
     where TAggregate : Aggregate<TId>
     where TId : struct,
@@ -46,6 +45,11 @@ public class AggregateRepository<TContext, TAggregate, TId> : UnitOfWork<TContex
         //await Context.SaveChangesAsync(cancellationToken);
     }
 
+    public virtual TAggregate Get(TId id)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<IEnumerable<TAggregate>> GetAsync(CancellationToken cancellationToken)
     {
         List<string> includePath = Context.GetIncludePaths(typeof(TAggregate)).ToList();
@@ -75,6 +79,16 @@ public class AggregateRepository<TContext, TAggregate, TId> : UnitOfWork<TContex
             query = query.Include(item);
         }
         return await query.SingleOrDefaultAsync(item => item.Key!.Equals(key), cancellationToken);
+    }
+
+    public virtual void Save(TAggregate aggregate)
+    {
+        var events = aggregate.Events;
+        //  1.AggregateType
+        //  2.AggregateId
+        //  3.Event Data
+        //  4.Event Type
+        //  5.Datetime
     }
 
     public void SaveChange() => Context.SaveChanges();
