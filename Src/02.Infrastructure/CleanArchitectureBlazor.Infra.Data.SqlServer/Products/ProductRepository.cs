@@ -5,7 +5,6 @@ using CleanArchitectureBlazor.Infra.Data.SqlServer.Common;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Common.DataBase;
 
 namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Products;
-
 public class ProductRepository : AggregateRepository<DataContext, Product, long>, IProductRepository
 {
     private readonly IEventStore _eventStore;
@@ -18,7 +17,7 @@ public class ProductRepository : AggregateRepository<DataContext, Product, long>
     {
         var events = aggregate.Events;
         string typeName = typeof(Product).Name;
-        _eventStore.Save(typeName,aggregate.Id,aggregate.Version,events.ToList());
+        _eventStore.Save(typeName, aggregate.Id, aggregate.Version, events.ToList());
     }
     public override Product Get(long id)
     {
