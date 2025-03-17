@@ -13,4 +13,10 @@ public class Category : Aggregate
         Title = title;
         AddEvent(new CategoryCreated(title));
     }
+
+    public void UpdateTitle(string title)
+    {
+        Title = title;
+        AddEvent(new CategoryTitleUpdated(Title,Id));
+    }
 }

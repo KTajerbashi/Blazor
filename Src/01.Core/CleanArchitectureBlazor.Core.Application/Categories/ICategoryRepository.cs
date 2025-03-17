@@ -6,5 +6,3 @@ namespace CleanArchitectureBlazor.Core.Application.Categories;
 public interface ICategoryRepository : IAggregateRepository<Category, long>
 {
 }
-
-

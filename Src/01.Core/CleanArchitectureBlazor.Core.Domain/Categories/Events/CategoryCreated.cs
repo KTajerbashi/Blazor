@@ -11,3 +11,13 @@ public class CategoryCreated : IDomainEvent
         Title = title;
     }
 }
+public class CategoryTitleUpdated : IDomainEvent
+{
+    public string Title { get; }
+    public long Id { get; set; }
+    public CategoryTitleUpdated(string title, long id)
+    {
+        Title = title;
+        Id = id;
+    }
+}
