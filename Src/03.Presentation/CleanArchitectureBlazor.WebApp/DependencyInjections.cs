@@ -3,6 +3,7 @@ using CleanArchitectureBlazor.Core.Application.Common.Extensions;
 using CleanArchitectureBlazor.Infra.Data.SqlServer;
 using CleanArchitectureBlazor.WebApp.Common.Swagger;
 using CleanArchitectureBlazor.WebApp.Data;
+using CleanArchitectureBlazor.WebApp.Middlewares.LoggingHandler;
 
 namespace CleanArchitectureBlazor.WebApp;
 
@@ -41,6 +42,8 @@ public static class DependencyInjections
         {
             app.UseSwaggerServices();
         }
+        
+        app.UseLoggingMiddleware();
 
         app.UseHttpsRedirection();
 

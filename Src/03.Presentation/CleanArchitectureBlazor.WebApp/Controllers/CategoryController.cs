@@ -6,10 +6,12 @@ namespace CleanArchitectureBlazor.WebApp.Controllers;
 
 public class CategoryController : BaseContorller
 {
+    private readonly ILogger<CategoryController> _logger;
     private readonly ICategoryRepository _repository;
-    public CategoryController(ICategoryRepository repository)
+    public CategoryController(ICategoryRepository repository, ILogger<CategoryController> logger)
     {
         _repository = repository;
+        _logger = logger;
     }
     [HttpPost]
     public async Task<IActionResult> Create(string title)
@@ -28,7 +30,7 @@ public class CategoryController : BaseContorller
     [HttpDelete("{key}")]
     public async Task<IActionResult> Delete(Guid key)
     {
-        await _repository.DeleteAsync(key,CancellationToken.None);
+        await _repository.DeleteAsync(key, CancellationToken.None);
         return Ok($"Deleted {key}");
     }
 
@@ -38,11 +40,28 @@ public class CategoryController : BaseContorller
         var entity = await _repository.GetAsync(key,CancellationToken.None);
         return Ok(entity);
     }
-    
+
     [HttpGet]
     public async Task<IActionResult> ReadAll()
     {
-        var entities = await _repository.GetAsync(CancellationToken.None);
-        return Ok(entities);
+        try
+        {
+            //throw new Exception("خطای کاربری");
+            _logger.LogInformation($"LogInformation => {Guid.NewGuid()}");
+            _logger.LogCritical($"LogCritical => {Guid.NewGuid()}");
+            _logger.LogDebug($"LogDebug => {Guid.NewGuid()}");
+            _logger.LogError($"LogError => {Guid.NewGuid()}");
+            _logger.LogTrace($"LogTrace => {Guid.NewGuid()}");
+            _logger.LogWarning($"LogWarning => {Guid.NewGuid()}");
+            _logger.Log(LogLevel.Information, "123456789");
+            var entities = await _repository.GetAsync(CancellationToken.None);
+            return Ok(entities);
+        }
+        catch (Exception ex)
+        {
+            _logger.Log(LogLevel.Error, ex.Message);
+            _logger.Log(LogLevel.Error,ex,"خطای اتفاقی");
+            throw;
+        }
     }
 }
