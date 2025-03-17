@@ -13,10 +13,14 @@ try
     builder.AddSerilogServices();
 
     builder.Services.AddWebAppDependecies(configuration);
-
+    builder.Services.AddLogging(loggingBuilder =>
+    {
+        loggingBuilder.AddConsole();
+        loggingBuilder.AddDebug();
+    });
     var app = builder.Build();
 
-    app.UseWebAppDependecies();
+    await app.UseWebAppDependecies();
 
     app.UseSerilogServices();
 

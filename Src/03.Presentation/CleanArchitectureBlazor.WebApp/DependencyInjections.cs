@@ -42,7 +42,9 @@ public static class DependencyInjections
         {
             app.UseSwaggerServices();
         }
-        
+
+        await Task.CompletedTask;
+
         app.UseLoggingMiddleware();
 
         app.UseHttpsRedirection();
