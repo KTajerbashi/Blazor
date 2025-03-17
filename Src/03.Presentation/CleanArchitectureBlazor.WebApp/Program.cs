@@ -15,7 +15,6 @@ try
     builder.Services.AddWebAppDependecies(configuration);
 
     var app = builder.Build();
-    
 
     app.UseWebAppDependecies();
 

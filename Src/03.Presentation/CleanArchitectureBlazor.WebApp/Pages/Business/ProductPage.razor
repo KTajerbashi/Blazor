@@ -1,0 +1,140 @@
+﻿@page "/product"
+@using CleanArchitectureBlazor.Core.Application.Categories
+@using CleanArchitectureBlazor.Core.Domain.Categories.Entities
+@using CleanArchitectureBlazor.Core.Domain.Products.Entities
+@using CleanArchitectureBlazor.Core.Application.Products
+@inject IProductRepository ProductRepository
+@inject ICategoryRepository CategoryRepository
+
+
+<div class="container">
+    <h3 class="alert alert-dark">Product Management</h3>
+    <div class="row border border-1 p-2 shadow my-1 rounded-2">
+        <div class="alert alert-dark">Create / Update</div>
+        <div class="col-12">
+            <div class="mb-2">
+                <label class="form-label">Title</label>
+                <input class="form-control" type="text" placeholder="Enter product title" @bind="productTitle" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Description</label>
+                <input class="form-control" type="text" placeholder="Enter product description" @bind="productDescription" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Price</label>
+                <input class="form-control" type="number" placeholder="Enter product price" @bind="productPrice" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Category</label>
+                <select class="form-control" @bind="selectedCategoryId">
+                    <option value="0">Select a category</option>
+                    @foreach (var category in _categories)
+                    {
+                        <option value="@category.Id">@category.Title</option>
+                    }
+                </select>
+            </div>
+            <button class="btn btn-primary" @onclick="SaveProduct">Save</button>
+        </div>
+    </div>
+
+    <div class="row border border-1 p-2 shadow my-1 rounded-2">
+        <div class="alert alert-dark">Product List</div>
+        <div class="col-12">
+            <ul class="list-group">
+                @foreach (var product in _products)
+                {
+                    <li class="list-group-item d-flex flex-row justify-content-between">
+                        <span>@product.Title - @product.Description - $@product.Price</span>
+                        <span>
+                            <button class="btn btn-outline-warning" @onclick="() => EditProduct(product)">Update</button>
+                            <button class="btn btn-outline-danger" @onclick="() => DeleteProduct(product.Id)">Delete</button>
+                        </span>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<Product> _products = new();
+    private List<Category> _categories = new();
+    private string productTitle = string.Empty;
+    private string productDescription = string.Empty;
+    private int productPrice = 0;
+    private long selectedCategoryId = 0;
+    private long? editingProductId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadCategories();
+        await LoadProducts();
+    }
+
+    private async Task LoadCategories()
+    {
+        var categories = await CategoryRepository.GetAsync(CancellationToken.None);
+        _categories = categories.ToList();
+    }
+
+    private async Task LoadProducts()
+    {
+        var products = await ProductRepository.GetAsync(CancellationToken.None);
+        _products = products.ToList();
+    }
+
+    private async Task SaveProduct()
+    {
+        if (!string.IsNullOrWhiteSpace(productTitle) && selectedCategoryId > 0)
+        {
+            if (editingProductId.HasValue)
+            {
+                var product = _products.FirstOrDefault(p => p.Id == editingProductId.Value);
+                if (product != null)
+                {
+                    product.ChangeTitle(productTitle);
+                    product.ChangePrice(productPrice);
+                    await ProductRepository.SaveChangeAsync();
+                }
+            }
+            else
+            {
+                var newProduct = new Product(0, productTitle, productDescription, productPrice, selectedCategoryId);
+                await ProductRepository.CreateAsync(newProduct, CancellationToken.None);
+                await ProductRepository.SaveChangeAsync();
+            }
+
+            ResetForm();
+            await LoadProducts();
+        }
+    }
+
+    private void EditProduct(Product product)
+    {
+        productTitle = product.Title;
+        productDescription = product.Description;
+        productPrice = product.Price;
+        selectedCategoryId = product.CategoryId;
+        editingProductId = product.Id;
+    }
+
+    private async Task DeleteProduct(long productId)
+    {
+        var product = _products.FirstOrDefault(p => p.Id == productId);
+        if (product != null)
+        {
+            await ProductRepository.DeleteAsync(product, CancellationToken.None);
+            await LoadProducts();
+        }
+    }
+
+    private void ResetForm()
+    {
+        productTitle = string.Empty;
+        productDescription = string.Empty;
+        productPrice = 0;
+        selectedCategoryId = 0;
+        editingProductId = null;
+    }
+}
