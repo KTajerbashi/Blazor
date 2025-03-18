@@ -17,9 +17,14 @@ public static class DependencyInjections
 
         services.AddRazorPages();
 
+        // Add Identity UI (for login, register, etc.)
+        services.AddRazorPages().AddRazorRuntimeCompilation();
+
         services.AddServerSideBlazor();
 
         services.AddSingleton<WeatherForecastService>();
+
+        services.AddServerSideBlazor();
 
         services.AddInfraDataDependecies(configuration, assemblies);
 
@@ -52,6 +57,13 @@ public static class DependencyInjections
         app.UseStaticFiles();
 
         app.UseRouting();
+
+        // Enable authentication and authorization
+        app.UseAuthentication();
+
+        app.UseAuthorization();
+
+        app.MapRazorPages();
 
         app.MapBlazorHub();
         
