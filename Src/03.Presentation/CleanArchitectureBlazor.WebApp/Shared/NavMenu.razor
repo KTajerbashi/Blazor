@@ -10,53 +10,63 @@
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+            <NavLink class="nav-link" href="Swagger" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Swagger
             </NavLink>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="dashboard">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Dashboard
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="profile">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Profile
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="product">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Product
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="category">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Category
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Swagger">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Swagger
-            </NavLink>
-        </div>
+        @foreach (var nav in NavModels)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="@nav.Link">
+                    <span class="@nav.Icon" aria-hidden="true"></span> @nav.Title
+                </NavLink>
+            </div>
+        }
+
     </nav>
 </div>
 
 @code {
     private bool collapseNavMenu = true;
-
+    public class NavModel
+    {
+        public string Link { get; set; }
+        public string Title { get; set; }
+        public string Icon { get; set; }
+    }
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private List<NavModel> NavModels = new();
 
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        generateNavs();
+    }
+
+    void generateNavs()
+    {
+        NavModels.Add(new NavModel { Link = "Swagger", Title = "Swagger", Icon = "oi oi-document" });
+        NavModels.Add(new NavModel { Link = "", Title = "Home", Icon = "oi oi-home" });
+        NavModels.Add(new NavModel { Link = "Counter", Title = "Counter", Icon = "oi oi-plus" });
+        NavModels.Add(new NavModel { Link = "Dashboard", Title = "Dashboard", Icon = "oi oi-dashboard" });
+        NavModels.Add(new NavModel { Link = "Profile", Title = "Profile", Icon = "oi oi-person" });
+        NavModels.Add(new NavModel { Link = "Product", Title = "Product", Icon = "oi oi-box" });
+        NavModels.Add(new NavModel { Link = "Category", Title = "Category", Icon = "oi oi-tags" });
+        NavModels.Add(new NavModel { Link = "Fetch", Title = "Fetch Data", Icon = "oi oi-cloud-download" });
+        NavModels.Add(new NavModel { Link = "Change-Password", Title = "Change Password", Icon = "oi oi-lock-locked" });
+        NavModels.Add(new NavModel { Link = "Delete-Personal-Data", Title = "DeletePersonalData", Icon = "oi oi-trash" });
+        NavModels.Add(new NavModel { Link = "Disable-2fa", Title = "Disable2fa", Icon = "oi oi-ban" });
+        NavModels.Add(new NavModel { Link = "Download-Personal-Data", Title = "DownloadPersonalData", Icon = "oi oi-cloud-download" });
+        NavModels.Add(new NavModel { Link = "Email", Title = "Email", Icon = "oi oi-envelope" });
+        NavModels.Add(new NavModel { Link = "Enable-Authenticator", Title = "EnableAuthenticator", Icon = "oi oi-check" });
+        NavModels.Add(new NavModel { Link = "External-Logins", Title = "ExternalLogins", Icon = "oi oi-account-login" });
+        NavModels.Add(new NavModel { Link = "Generate-Recovery-Codes", Title = "GenerateRecoveryCodes", Icon = "oi oi-key" });
+        NavModels.Add(new NavModel { Link = "Personal-Data", Title = "PersonalData", Icon = "oi oi-file" });
+        NavModels.Add(new NavModel { Link = "Reset-Authenticator", Title = "ResetAuthenticator", Icon = "oi oi-reload" });
+        NavModels.Add(new NavModel { Link = "Set-Password", Title = "SetPassword", Icon = "oi oi-lock-unlocked" });
+        NavModels.Add(new NavModel { Link = "Show-Recovery-Codes", Title = "ShowRecoveryCodes", Icon = "oi oi-eye" });
+        NavModels.Add(new NavModel { Link = "Two-Factor-Authentication", Title = "TwoFactorAuthentication", Icon = "oi oi-shield" });
+    }
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
