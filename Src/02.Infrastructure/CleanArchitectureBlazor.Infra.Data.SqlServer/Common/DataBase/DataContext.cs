@@ -20,6 +20,7 @@ public class DataContext : BaseDataContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataContext).Assembly);
+        modelBuilder.AddSecurityConfiguration();
     }
 
     public DbSet<Product> Products => Set<Product>();

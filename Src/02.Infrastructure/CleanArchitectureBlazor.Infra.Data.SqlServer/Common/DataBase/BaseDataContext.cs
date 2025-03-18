@@ -1,6 +1,8 @@
 ﻿using CleanArchitectureBlazor.Core.Application.Common;
 using CleanArchitectureBlazor.Core.Domain.Common;
 using CleanArchitectureBlazor.Core.Domain.Outbox.Entities;
+using CleanArchitectureBlazor.Infra.Data.SqlServer.Identity.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -8,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace CleanArchitectureBlazor.Infra.Data.SqlServer.Common.DataBase;
 
-public abstract class BaseDataContext : DbContext
+public abstract class BaseDataContext : IdentityDbContext<ApplicationUser, ApplicationRole,long,ApplicationUserClaim,ApplicationUserRole,ApplicationUserLogin,ApplicationRoleClaim,ApplicationUserToken>
 {
     protected BaseDataContext(DbContextOptions options) : base(options)
     {

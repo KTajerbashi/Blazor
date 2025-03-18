@@ -8,6 +8,7 @@ using CleanArchitectureBlazor.Infra.Data.SqlServer.Categories;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Common;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Common.DataBase;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Customers;
+using CleanArchitectureBlazor.Infra.Data.SqlServer.Identity.Entities;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Orders;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Products;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,7 @@ public static class DependencyInjections
         .AddDatabaseDependecies(configuration)
         .AddDependencies()
         .AddUnitOfWork(assemblies)
+        .AddIdentityConfiguration(configuration)
         .AddSingletonRepositories(assemblies)
         .AddScopeRepositories(assemblies)
         .AddTransientRepositories(assemblies)
@@ -91,6 +93,18 @@ public static class DependencyInjections
         //    .AsImplementedInterfaces()
         //    .WithTransientLifetime()
         //);
+        return services;
+    }
+
+    private static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration)
+    {
+        services
+            .AddIdentity<ApplicationUser, ApplicationRole>()
+            .AddEntityFrameworkStores<DataContext>()
+            .AddDefaultTokenProviders()
+            //.AddUserManager<ApplicationUser>()
+            ;
+
         return services;
     }
 }
