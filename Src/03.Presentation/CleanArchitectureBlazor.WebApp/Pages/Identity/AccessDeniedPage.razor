@@ -1,7 +1,23 @@
-﻿@page "/Access-Denied"
+﻿@page "/access-denied"
 
-<h3>AccessDeniedPage</h3>
+
+<div class="container-fluid page-container">
+    <div class="row">
+        <div class="col-12">
+            <h6 class="alert alert-danger text-center">@Title Page</h6>
+            <div class="page-content">
+                <div class="container d-flex flex-row justify-content-around text-center gap-1">
+                    <div class="col-12 border border-1">
+                        <h1 class="text-danger">@Title</h1>
+                        <p class="text-danger">You do not have access to this resource.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @code {
-
+    public string Title { get; set; } = "Access denied";
 }
