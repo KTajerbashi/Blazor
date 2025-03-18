@@ -1,7 +1,10 @@
 ﻿@page "/profile"
+@attribute [Authorize]
+
 @using CleanArchitectureBlazor.Core.Application.Users
 @using CleanArchitectureBlazor.Core.Application.Users.Models
 @using CleanArchitectureBlazor.Core.Domain.Users
+
 @inject IUserRepository UserRepository
 @inject NavigationManager Navigation
 
