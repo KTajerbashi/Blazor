@@ -1,19 +1,36 @@
 ﻿@page "/Register-Confirmation"
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Register Confirmation Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-3 border border-1">1</div>
-                    <div class="col-3 border border-1">2</div>
-                    <div class="col-3 border border-1">3</div>
-                    <div class="col-3 border border-1">4</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@code {
 
+<PageContainer Title="Register Confirmation Page">
+    @if (DisplayConfirmAccountLink)
+    {
+        <p>
+            This app does not currently have a real email sender registered, see <a href="https://aka.ms/aspaccountconf">these docs</a> for how to configure a real email sender.
+            Normally this would be emailed: <a id="confirm-link" href="@EmailConfirmationUrl">Click here to confirm your account</a>
+        </p>
+    }
+    else
+    {
+        <p>
+            Please check your email to confirm your account.
+        </p>
+    }
+</PageContainer>
+
+@code {
+    private bool DisplayConfirmAccountLink { get; set; } = true; // Set this based on your logic
+    private string EmailConfirmationUrl { get; set; } = "/confirm-email"; // Set this based on your logic
+
+    protected override void OnInitialized()
+    {
+        // Fetch the display confirm account link and email confirmation URL from the query string or backend
+        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("displayConfirmAccountLink", out var displayConfirmAccountLink))
+        {
+            DisplayConfirmAccountLink = bool.Parse(displayConfirmAccountLink);
+        }
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("emailConfirmationUrl", out var emailConfirmationUrl))
+        {
+            EmailConfirmationUrl = emailConfirmationUrl;
+        }
+    }
 }

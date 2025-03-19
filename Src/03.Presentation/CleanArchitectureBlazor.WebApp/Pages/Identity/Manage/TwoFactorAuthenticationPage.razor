@@ -1,26 +1,110 @@
 ﻿@page "/two-factor-authentication"
 
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">TwoF actor Authentication</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Email Confirmed !</button>
+
+<PageContainer Title="Two Factor Authentication">
+    <AlertMessage Message="@StatusMessage" />
+    @if (ConsentGiven)
+    {
+        <div class="alert alert-dark text-center">
+            @if (Is2faEnabled)
+            {
+                @if (RecoveryCodesLeft == 0)
+                {
+                    <div class="alert alert-danger">
+                        <strong>You have no recovery codes left.</strong>
+                        <p>You must <a href="/generate-recovery-codes">generate a new set of recovery codes</a> before you can log in with a recovery code.</p>
                     </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Phone Number Confirmed !</button>
+                }
+                else if (RecoveryCodesLeft == 1)
+                {
+                    <div class="alert alert-danger">
+                        <strong>You have 1 recovery code left.</strong>
+                        <p>You can <a href="/generate-recovery-codes">generate a new set of recovery codes</a>.</p>
                     </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-danger">Not Confirmed !!!</button>
+                }
+                else if (RecoveryCodesLeft <= 3)
+                {
+                    <div class="alert alert-warning">
+                        <strong>You have @RecoveryCodesLeft recovery codes left.</strong>
+                        <p>You should <a href="/generate-recovery-codes">generate a new set of recovery codes</a>.</p>
                     </div>
-                </div>
-            </div>
+                }
+
+                @if (IsMachineRemembered)
+                {
+                    <button type="button" class="btn btn-primary" @onclick="ForgetThisBrowser">Forget this browser</button>
+                }
+                <a href="/disable-2fa" class="btn btn-primary">Disable 2FA</a>
+                <a href="/generate-recovery-codes" class="btn btn-primary">Reset recovery codes</a>
+            }
+
         </div>
-    </div>
-</div>
+        <hr />
+        <div class="alert alert-success text-center">
+            <h4>Authenticator app</h4>
+            @if (!HasAuthenticator)
+            {
+                <a id="enable-authenticator" href="/enable-authenticator" class="btn btn-primary">Add authenticator app</a>
+            }
+            else
+            {
+                <a id="enable-authenticator" href="/enable-authenticator" class="btn btn-primary">Set up authenticator app</a>
+                <a id="reset-authenticator" href="/reset-authenticator" class="btn btn-primary">Reset authenticator app</a>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger">
+            <strong>Privacy and cookie policy have not been accepted.</strong>
+            <p>You must accept the policy before you can enable two-factor authentication.</p>
+        </div>
+    }
+</PageContainer>
+
 
 @code {
+    private string StatusMessage { get; set; }
+    private bool ConsentGiven { get; set; } = true; // Set this based on your logic
+    private bool Is2faEnabled { get; set; } = true; // Set this based on your logic
+    private int RecoveryCodesLeft { get; set; } = 3; // Set this based on your logic
+    private bool IsMachineRemembered { get; set; } = false; // Set this based on your logic
+    private bool HasAuthenticator { get; set; } = true; // Set this based on your logic
 
+    protected override async Task OnInitializedAsync()
+    {
+        // Fetch 2FA status and recovery codes from the backend
+        // var response = await Http.GetFromJsonAsync<TwoFactorAuthenticationStatus>("api/account/two-factor-status");
+
+        // if (response != null)
+        // {
+        //     Is2faEnabled = response.Is2faEnabled;
+        //     RecoveryCodesLeft = response.RecoveryCodesLeft;
+        //     IsMachineRemembered = response.IsMachineRemembered;
+        //     HasAuthenticator = response.HasAuthenticator;
+        // }
+    }
+
+    private async Task ForgetThisBrowser()
+    {
+        var response = await Http.PostAsync("api/account/forget-browser", null);
+
+        if (response.IsSuccessStatusCode)
+        {
+            StatusMessage = "This browser has been forgotten.";
+            IsMachineRemembered = false;
+        }
+        else
+        {
+            StatusMessage = "An error occurred while forgetting this browser.";
+        }
+    }
+
+    public class TwoFactorAuthenticationStatus
+    {
+        public bool Is2faEnabled { get; set; }
+        public int RecoveryCodesLeft { get; set; }
+        public bool IsMachineRemembered { get; set; }
+        public bool HasAuthenticator { get; set; }
+    }
 }

@@ -1,21 +1,55 @@
 ﻿@page "/Logout"
 
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Logout Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-3 border border-1">1</div>
-                    <div class="col-3 border border-1">2</div>
-                    <div class="col-3 border border-1">3</div>
-                    <div class="col-3 border border-1">4</div>
-                </div>
-            </div>
+@inject NavigationManager Navigation
+@inject HttpClient Http
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageContainer Title="Logout Page">
+    <div class="container d-flex flex-row justify-content-around text-center gap-1">
+        <div class="col-12 border border-1">
+            <header class="alert alert-danger p-5 shadow text-center">
+                <h1>Log out : @UserName</h1>
+                <hr />
+
+                @if (IsAuthenticated)
+                {
+                    <button type="button" class="btn btn-outline-danger shadow" @onclick="HandleLogout">Click here to Logout</button>
+                }
+                else
+                {
+                    <p>You have successfully logged out of the application.</p>
+                }
+            </header>
         </div>
     </div>
-</div>
-
+</PageContainer>
 @code {
+    private string UserName { get; set; }
+    private bool IsAuthenticated { get; set; }
 
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        IsAuthenticated = user.Identity?.IsAuthenticated ?? false;
+        UserName = user.Identity?.Name ?? "Guest";
+    }
+
+    private async Task HandleLogout()
+    {
+        // Call your API or backend to handle the logout request
+        var response = await Http.PostAsync("api/account/logout", null);
+
+        if (response.IsSuccessStatusCode)
+        {
+            // Clear the authentication state
+            await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            Navigation.NavigateTo("/"); // Redirect to the home page
+        }
+        else
+        {
+            // Handle error (e.g., display a message)
+        }
+    }
 }

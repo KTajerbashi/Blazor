@@ -1,24 +1,79 @@
 ﻿@page "/enable-authenticator"
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Enable Authenticator Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Email Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Phone Number Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-danger">Not Confirmed !!!</button>
+
+<PageContainer Title="Enable Authenticator Page">
+    <div>
+        <p>To use an authenticator app, go through the following steps:</p>
+        <ol class="list">
+            <li>
+                <p>
+                    Download a two-factor authenticator app like Microsoft Authenticator for
+                    <a href="https://go.microsoft.com/fwlink/?Linkid=825072">Android</a> and
+                    <a href="https://go.microsoft.com/fwlink/?Linkid=825073">iOS</a> or
+                    Google Authenticator for
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en">Android</a> and
+                    <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8">iOS</a>.
+                </p>
+            </li>
+            <li>
+                <p>Scan the QR Code or enter this key <kbd>@SharedKey</kbd> into your two-factor authenticator app. Spaces and casing do not matter.</p>
+                <div class="alert alert-info">Learn how to <a href="https://go.microsoft.com/fwlink/?Linkid=852423">enable QR code generation</a>.</div>
+                <div id="qrCode"></div>
+                <div id="qrCodeData" data-url="@AuthenticatorUri"></div>
+            </li>
+            <li>
+                <p>
+                    Once you have scanned the QR code or input the key above, your two-factor authentication app will provide you
+                    with a unique code. Enter the code in the confirmation box below.
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <EditForm Model="@Model" OnValidSubmit="HandleValidSubmit">
+                            <DataAnnotationsValidator />
+                            <ValidationSummary />
+
+                            <div class="form-group">
+                                <label for="code" class="form-label">Verification Code</label>
+                                <InputText id="code" @bind-Value="Model.Code" class="form-control" placeholder="Please enter the code." />
+                                <ValidationMessage For="@(() => Model.Code)" />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary  mt-2">Verify</button>
+                        </EditForm>
                     </div>
                 </div>
-            </div>
-        </div>
+            </li>
+        </ol>
     </div>
-</div>
-@code {
+</PageContainer>
 
+<AlertMessage Message="@StatusMessage" />
+
+
+@code {
+    private EnableAuthenticatorModel Model = new EnableAuthenticatorModel();
+    private string StatusMessage { get; set; }
+    private string SharedKey { get; set; } = "YourSharedKeyHere"; // Set this based on your logic
+    private string AuthenticatorUri { get; set; } = "YourAuthenticatorUriHere"; // Set this based on your logic
+
+    private async Task HandleValidSubmit()
+    {
+        // Call your API or backend to verify the code
+        var response = await Http.PostAsJsonAsync("api/account/enable-authenticator", Model);
+
+        if (response.IsSuccessStatusCode)
+        {
+            StatusMessage = "Your authenticator app has been verified.";
+            Navigation.NavigateTo("/"); // Redirect to home or another page
+        }
+        else
+        {
+            StatusMessage = "An error occurred while verifying the code.";
+        }
+    }
+
+    public class EnableAuthenticatorModel
+    {
+        [Required(ErrorMessage = "Verification Code is required.")]
+        public string Code { get; set; }
+    }
 }

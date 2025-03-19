@@ -1,19 +1,19 @@
 ﻿@page "/Confirm-Email"
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Confirm Email Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-3 border border-1">1</div>
-                    <div class="col-3 border border-1">2</div>
-                    <div class="col-3 border border-1">3</div>
-                    <div class="col-3 border border-1">4</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@code {
 
+<PageContainer Title="Confirm Email Page">
+    <AlertMessage Message="@StatusMessage" />
+</PageContainer>
+
+@code {
+    private string StatusMessage { get; set; } = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        // Fetch the status message from the query string or backend
+        // var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        // if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("message", out var message))
+        // {
+        //     StatusMessage = message ;
+        // }
+    }
 }

@@ -1,24 +1,76 @@
 ﻿@page "/email"
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Email Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Email Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Phone Number Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-danger">Not Confirmed !!!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@code {
 
+<PageContainer Title="Email Page">
+    <EditForm Model="@Model" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <AlertMessage Message="@StatusMessage" />
+        @if (IsEmailConfirmed)
+        {
+            <div class="form-group p-2">
+                <label for="email" class="form-label">Email</label>
+                <span class="text-success font-weight-bold">✓</span>
+                <InputText id="email" @bind-Value="Email" class="form-control" disabled />
+            </div>
+        }
+        else
+        {
+            <div class="form-group p-2">
+                <label for="email" class="form-label">Email</label>
+                <InputText id="email" @bind-Value="Email" class="form-control" disabled />
+                <button type="button" class="btn btn-link" @onclick="SendVerificationEmail">Send verification email</button>
+            </div>
+        }
+        <div class="form-group p-2">
+            <label for="newEmail" class="form-label">New Email</label>
+            <InputText id="newEmail" @bind-Value="Model.NewEmail" class="form-control" placeholder="Please enter new email." />
+            <ValidationMessage For="@(() => Model.NewEmail)" />
+        </div>
+        <button type="submit" class="btn btn-outline-primary mx-4">Change email</button>
+    </EditForm>
+</PageContainer>
+
+@code {
+    private EmailModel Model = new EmailModel();
+    private string StatusMessage { get; set; }
+    private bool IsEmailConfirmed = true; // Set this based on your logic
+    private string Email = "user@example.com"; // Set this based on your logic
+
+    private async Task HandleValidSubmit()
+    {
+        // Call your API or backend to change the email
+        var response = await Http.PostAsJsonAsync("api/account/change-email", Model);
+
+        if (response.IsSuccessStatusCode)
+        {
+            StatusMessage = "Your email has been updated.";
+            Navigation.NavigateTo("/"); // Redirect to home or another page
+        }
+        else
+        {
+            StatusMessage = "An error occurred while updating your email.";
+        }
+    }
+
+    private async Task SendVerificationEmail()
+    {
+        // Call your API or backend to send the verification email
+        var response = await Http.PostAsync("api/account/send-verification-email", null);
+
+        if (response.IsSuccessStatusCode)
+        {
+            StatusMessage = "Verification email sent. Please check your email.";
+        }
+        else
+        {
+            StatusMessage = "An error occurred while sending the verification email.";
+        }
+    }
+
+    public class EmailModel
+    {
+        [Required(ErrorMessage = "New Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email address.")]
+        public string NewEmail { get; set; }
+    }
 }

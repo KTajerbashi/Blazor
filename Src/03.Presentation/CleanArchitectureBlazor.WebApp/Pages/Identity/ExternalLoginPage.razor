@@ -1,20 +1,68 @@
 ﻿@page "/External-Login"
 
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">External Login Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-3 border border-1">1</div>
-                    <div class="col-3 border border-1">2</div>
-                    <div class="col-3 border border-1">3</div>
-                    <div class="col-3 border border-1">4</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@code {
 
+
+<PageContainer Title="External Login Page">
+    <h2 id="external-login-title">Associate your @ProviderDisplayName account.</h2>
+    <hr />
+    <p id="external-login-description" class="text-info">
+        You've successfully authenticated with <strong>@ProviderDisplayName</strong>.
+        Please enter an email address for this site below and click the Register button to finish
+        logging in.
+    </p>
+    <EditForm Model="@Model" OnValidSubmit="HandleConfirmation">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <InputText id="email" @bind-Value="Model.Email" class="form-control" placeholder="Please enter your email." />
+            <ValidationMessage For="@(() => Model.Email)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary m-3">Register</button>
+    </EditForm>
+</PageContainer>
+
+@code {
+    private ExternalLoginModel Model = new ExternalLoginModel();
+    private string ProviderDisplayName { get; set; } = "External Provider"; // Set this based on your logic
+    private string ReturnUrl { get; set; } = "/"; // Set this based on your logic
+
+    protected override void OnInitialized()
+    {
+        // Fetch provider display name and return URL from the query string or backend
+        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("provider", out var provider))
+        {
+            ProviderDisplayName = provider;
+        }
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("returnUrl", out var returnUrl))
+        {
+            ReturnUrl = returnUrl;
+        }
+    }
+
+    private async Task HandleConfirmation()
+    {
+        // Call your API or backend to confirm the external login
+        var response = await Http.PostAsJsonAsync("api/account/external-login-confirmation", new { Model.Email, ReturnUrl });
+
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo(ReturnUrl); // Redirect to the return URL
+        }
+        else
+        {
+            // Handle error (e.g., display a message)
+        }
+    }
+
+    public class ExternalLoginModel
+    {
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email address.")]
+        public string Email { get; set; }
+    }
 }
+

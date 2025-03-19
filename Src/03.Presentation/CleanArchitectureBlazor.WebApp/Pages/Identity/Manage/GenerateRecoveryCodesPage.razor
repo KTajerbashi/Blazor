@@ -1,26 +1,54 @@
 ﻿@page "/generate-recovery-codes"
 
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Generate Recovery Codes Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Email Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Phone Number Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-danger">Not Confirmed !!!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<PageContainer Title="Generate Recovery Codes Page">
+    <AlertMessage Message="@StatusMessage" />
+    <div class="alert alert-warning" role="alert">
+        <p>
+            <span class="glyphicon glyphicon-warning-sign"></span>
+            <strong>Put these codes in a safe place.</strong>
+        </p>
+        <p>
+            If you lose your device and don't have the recovery codes, you will lose access to your account.
+        </p>
+        <p>
+            Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key
+            used in an authenticator app, you should <a href="/reset-authenticator">reset your authenticator keys.</a>
+        </p>
     </div>
-</div>
 
+    <button class="btn btn-danger" @onclick="GenerateRecoveryCodes">Generate Recovery Codes</button>
+
+    @if (RecoveryCodes != null && RecoveryCodes.Any())
+    {
+        <div class="alert alert-info mt-3">
+            <h4>Your Recovery Codes:</h4>
+            <ul>
+                @foreach (var item in RecoveryCodes)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+            <p>Store these codes in a safe place. You can use them to regain access to your account if you lose your 2FA device.</p>
+        </div>
+    }
+
+</PageContainer>
 @code {
+    private string StatusMessage { get; set; }
+    private List<string> RecoveryCodes { get; set; } = new();
 
+    private async Task GenerateRecoveryCodes()
+    {
+        var response = await Http.PostAsync("api/account/generate-recovery-codes", null);
+
+        if (response.IsSuccessStatusCode)
+        {
+            RecoveryCodes = await response.Content.ReadFromJsonAsync<List<string>>();
+            StatusMessage = "New recovery codes have been generated.";
+        }
+        else
+        {
+            StatusMessage = "An error occurred while generating recovery codes.";
+        }
+    }
 }

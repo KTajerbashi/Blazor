@@ -1,19 +1,144 @@
 ﻿@page "/Login"
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Login Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-3 border border-1">1</div>
-                    <div class="col-3 border border-1">2</div>
-                    <div class="col-3 border border-1">3</div>
-                    <div class="col-3 border border-1">4</div>
-                </div>
+
+<PageContainer Title="Login Page">
+    <div class="container-fluid">
+        <div class="row gap-2">
+            <div class="col-7 p-5 border border-1 shadow rounded-3 my-2">
+                <EditForm Model="@Model" OnValidSubmit="HandleLogin">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+
+                    <h2>Use a local account to log in.</h2>
+                    <hr />
+
+                    <div class="form-group mt-4">
+                        <label class="form-label" for="email">Email</label>
+                        <InputText id="email" @bind-Value="Model.Email" class="form-control" placeholder="name@example.com" />
+                        <ValidationMessage For="@(() => Model.Email)" />
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <label class="form-label" for="password">Password</label>
+                        <InputText id="password" type="password" @bind-Value="Model.Password" class="form-control" placeholder="password" />
+                        <ValidationMessage For="@(() => Model.Password)" />
+                    </div>
+
+                    <div class="form-check mt-4">
+                        <InputCheckbox id="rememberMe" @bind-Value="Model.RememberMe" class="form-check-input" />
+                        <label for="rememberMe" class="form-check-label">Remember me</label>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-outline-primary w-100 mt-4">Log in</button>
+
+                    </div>
+                    <div class="d-flex flex-row justify-content-around mt-4">
+                        <a class="border border-1 rounded-5 p-2" href="/forgot-password">Forgot your password?</a>
+                        <a class="border border-1 rounded-5 p-2" href="/register?returnUrl=@ReturnUrl">Register as a new user</a>
+                        <a class="border border-1 rounded-5 p-2" href="/resend-email-confirmation">Resend email confirmation</a>
+                    </div>
+                </EditForm>
             </div>
+
+            <div class="col-4 p-5 border border-1 shadow rounded-3 my-2 text-center bg-dark bg-gradient text-light">
+                <h3>Use another service to log in.</h3>
+                <hr />
+
+                @if (ExternalLogins.Count == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                                article
+                                about setting up this ASP.NET application to support logging in via external services
+                            </a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <p>
+                            @foreach (var provider in ExternalLogins)
+                            {
+                                <button type="button" class="btn btn-primary" @onclick="() => HandleExternalLogin(provider.Name)" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                            }
+                        </p>
+                    </div>
+                }
+            </div>
+
         </div>
     </div>
-</div>
+</PageContainer>
 @code {
+    private LoginModel Model = new LoginModel();
+    private string ReturnUrl { get; set; } = "/";
+    private List<ExternalLoginProvider> ExternalLogins { get; set; } = new();
 
+    protected override async Task OnInitializedAsync()
+    {
+        // // Fetch external login providers from the backend
+        // var response = await Http.GetFromJsonAsync<List<ExternalLoginProvider>>("api/account/external-logins");
+        // if (response != null)
+        // {
+        //     ExternalLogins = response;
+        // }
+
+        // // Fetch return URL from the query string
+        // var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        // if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("returnUrl", out var returnUrl))
+        // {
+        //     ReturnUrl = returnUrl;
+        // }
+    }
+
+    private async Task HandleLogin()
+    {
+        // Call your API or backend to handle the login request
+        var response = await Http.PostAsJsonAsync("api/account/login", Model);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo(ReturnUrl); // Redirect to the return URL
+        }
+        else
+        {
+            // Handle error (e.g., display a message)
+        }
+    }
+
+    private async Task HandleExternalLogin(string provider)
+    {
+        // Call your API or backend to initiate external login
+        var response = await Http.PostAsJsonAsync("api/account/external-login", new { Provider = provider, ReturnUrl });
+
+        if (response.IsSuccessStatusCode)
+        {
+            var redirectUrl = await response.Content.ReadAsStringAsync();
+            Navigation.NavigateTo(redirectUrl, forceLoad: true); // Redirect to the external provider
+        }
+        else
+        {
+            // Handle error (e.g., display a message)
+        }
+    }
+
+    public class LoginModel
+    {
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email address.")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Password is required.")]
+        public string Password { get; set; }
+
+        public bool RememberMe { get; set; }
+    }
+
+    public class ExternalLoginProvider
+    {
+        public string Name { get; set; }
+        public string DisplayName { get; set; }
+    }
 }

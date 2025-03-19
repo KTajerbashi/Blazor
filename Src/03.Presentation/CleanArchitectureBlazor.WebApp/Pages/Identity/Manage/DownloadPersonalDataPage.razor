@@ -1,24 +1,34 @@
 ﻿@page "/download-personal-data"
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Download Personal Data Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Email Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Phone Number Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-danger">Not Confirmed !!!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@code {
+@using CleanArchitectureBlazor.WebApp.Extensions
 
+<PageContainer Title="Download Personal Data Page">
+    <AlertMessage Message="@StatusMessage" AlertType="success" />
+    <AlertMessage Message="@StatusMessage" AlertType="danger" />
+    <AlertMessage Message="@StatusMessage" AlertType="warning" />
+    <AlertMessage Message="@StatusMessage" AlertType="primary" />
+    <button class="btn btn-outline-primary" @onclick="DownloadPersonalData">Download Personal Data</button>
+</PageContainer>
+
+
+
+@code {
+    private string StatusMessage { get; set; }
+    private async Task DownloadPersonalData()
+    {
+        Console.WriteLine("Clicked");
+        StatusMessage = "2FA has been disabled.";
+        // // Call your API or backend to download personal data
+        // var response = await Http.GetAsync("api/account/download-personal-data");
+
+        // if (response.IsSuccessStatusCode)
+        // {
+        //     var content = await response.Content.ReadAsByteArrayAsync();
+        //     var fileName = "PersonalData.json"; // Set the file name
+        //                                         // FileUtil.SaveAsAsync(fileName, content); // Save the file
+        // }
+        // else
+        // {
+        //     // Handle error (e.g., display a message)
+        // }
+    }
 }

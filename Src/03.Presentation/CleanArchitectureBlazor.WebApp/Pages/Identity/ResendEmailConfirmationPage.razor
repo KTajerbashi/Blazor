@@ -1,19 +1,43 @@
 ﻿@page "/Resend-Email-Confirmation"
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Resend Email Confirmation Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-3 border border-1">1</div>
-                    <div class="col-3 border border-1">2</div>
-                    <div class="col-3 border border-1">3</div>
-                    <div class="col-3 border border-1">4</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@code {
 
+<PageContainer Title="Resend Email Confirmation Page">
+    <EditForm Model="@Model" OnValidSubmit="HandleResendEmailConfirmation">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <InputText id="email" @bind-Value="Model.Email" class="form-control" placeholder="name@example.com" />
+            <ValidationMessage For="@(() => Model.Email)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Resend</button>
+    </EditForm>
+</PageContainer>
+
+
+@code {
+    private ResendEmailConfirmationModel Model = new ResendEmailConfirmationModel();
+
+    private async Task HandleResendEmailConfirmation()
+    {
+        // Call your API or backend to handle the resend email confirmation request
+        var response = await Http.PostAsJsonAsync("api/account/resend-email-confirmation", Model);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo("/"); // Redirect to the home page or another page
+        }
+        else
+        {
+            // Handle error (e.g., display a message)
+        }
+    }
+
+    public class ResendEmailConfirmationModel
+    {
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email address.")]
+        public string? Email { get; set; }
+    }
 }

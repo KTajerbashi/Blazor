@@ -1,24 +1,33 @@
 ﻿@page "/personal-data"
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Personal Data Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Email Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Phone Number Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-danger">Not Confirmed !!!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@code {
 
+<PageContainer Title="Personal Data Page">
+    <p>Your account contains personal data that you have given us. This page allows you to download or delete that data.</p>
+    <p>
+        <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
+    </p>
+    <button class="btn btn-primary" @onclick="DownloadPersonalData">Download</button>
+    <button class="btn btn-danger" @onclick="NavigateToDeletePersonalData">Delete</button>
+</PageContainer>
+
+@code {
+    private async Task DownloadPersonalData()
+    {
+        var response = await Http.GetAsync("api/account/download-personal-data");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response.Content.ReadAsByteArrayAsync();
+            var fileName = "PersonalData.json"; // Set the file name
+                                                // FileUtil.SaveAsAsync(fileName, content); // Save the file
+        }
+        else
+        {
+            // Handle error (e.g., display a message)
+        }
+    }
+
+    private void NavigateToDeletePersonalData()
+    {
+        Navigation.NavigateTo("/delete-personal-data");
+    }
 }

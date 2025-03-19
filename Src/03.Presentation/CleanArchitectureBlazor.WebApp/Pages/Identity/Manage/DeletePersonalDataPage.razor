@@ -1,26 +1,50 @@
 ﻿@page "/delete-personal-data"
 
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Delete Personal Data Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Email Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Phone Number Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-danger">Not Confirmed !!!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<PageContainer Title="Delete Personal Data Page">
+    <div class="alert alert-warning" role="alert">
+        <p>
+            <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
+        </p>
     </div>
-</div>
+    <EditForm Model="@Model" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        @if (RequirePassword)
+        {
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <InputText id="password" type="password" @bind-Value="Model.Password" class="form-control" placeholder="Please enter your password." />
+                <ValidationMessage For="@(() => Model.Password)" />
+            </div>
+        }
+
+        <button type="submit" class="btn btn-danger mt-3">Delete data and close my account</button>
+    </EditForm>
+</PageContainer>
 
 @code {
+    private DeletePersonalDataModel Model = new DeletePersonalDataModel();
+    private bool RequirePassword = true; // Set this based on your logic
 
+    private async Task HandleValidSubmit()
+    {
+        // Call your API or backend to delete the user's data
+        var response = await Http.PostAsJsonAsync("api/account/delete-personal-data", Model);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo("/"); // Redirect to home or login page
+        }
+        else
+        {
+            // Handle error (e.g., display a message)
+        }
+    }
+
+    public class DeletePersonalDataModel
+    {
+        [Required(ErrorMessage = "Password is required.")]
+        public string Password { get; set; }
+    }
 }

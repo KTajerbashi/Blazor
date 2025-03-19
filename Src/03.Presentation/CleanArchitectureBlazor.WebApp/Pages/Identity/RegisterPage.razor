@@ -1,19 +1,145 @@
 ﻿@page "/Register"
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Register Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-3 border border-1">1</div>
-                    <div class="col-3 border border-1">2</div>
-                    <div class="col-3 border border-1">3</div>
-                    <div class="col-3 border border-1">4</div>
+<PageContainer Title="Register Page">
+    <div class="container d-flex flex-row justify-content-around text-center gap-1">
+        <div class="col-12 border border-1">
+            <div class="row">
+                <div class="col-md-4">
+                    <EditForm Model="@Model" OnValidSubmit="HandleRegister">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <h2>Create a new account.</h2>
+                        <hr />
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <InputText id="email" @bind-Value="Model.Email" class="form-control" placeholder="name@example.com" />
+                            <ValidationMessage For="@(() => Model.Email)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <InputText id="password" type="password" @bind-Value="Model.Password" class="form-control" placeholder="password" />
+                            <ValidationMessage For="@(() => Model.Password)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <InputText id="confirmPassword" type="password" @bind-Value="Model.ConfirmPassword" class="form-control" placeholder="password" />
+                            <ValidationMessage For="@(() => Model.ConfirmPassword)" />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </EditForm>
+                </div>
+
+                <div class="col-md-6 col-md-offset-2">
+                    <section>
+                        <h3>Use another service to register.</h3>
+                        <hr />
+
+                        @if (ExternalLogins.Count == 0)
+                        {
+                            <div>
+                                <p>
+                                    There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                                        article
+                                        about setting up this ASP.NET application to support logging in via external services
+                                    </a>.
+                                </p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+                                <p>
+                                    @foreach (var provider in ExternalLogins)
+                                    {
+                                        <button type="button" class="btn btn-primary" @onclick="() => HandleExternalLogin(provider.Name)" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    }
+                                </p>
+                            </div>
+                        }
+                    </section>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@code {
 
+</PageContainer>
+
+
+
+@code {
+    private RegisterModel Model = new RegisterModel();
+    private string ReturnUrl { get; set; } = "/";
+    private List<ExternalLoginProvider> ExternalLogins { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // // Fetch external login providers from the backend
+        // var response = await Http.GetFromJsonAsync<List<ExternalLoginProvider>>("api/account/external-logins");
+        // if (response != null)
+        // {
+        //     ExternalLogins = response;
+        // }
+
+        // // Fetch return URL from the query string
+        // var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        // if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("returnUrl", out var returnUrl))
+        // {
+        //     ReturnUrl = returnUrl;
+        // }
+    }
+
+    private async Task HandleRegister()
+    {
+        // Call your API or backend to handle the registration request
+        var response = await Http.PostAsJsonAsync("api/account/register", Model);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo("/login"); // Redirect to the login page
+        }
+        else
+        {
+            // Handle error (e.g., display a message)
+        }
+    }
+
+    private async Task HandleExternalLogin(string provider)
+    {
+        // Call your API or backend to initiate external login
+        var response = await Http.PostAsJsonAsync("api/account/external-login", new { Provider = provider, ReturnUrl });
+
+        if (response.IsSuccessStatusCode)
+        {
+            var redirectUrl = await response.Content.ReadAsStringAsync();
+            Navigation.NavigateTo(redirectUrl, forceLoad: true); // Redirect to the external provider
+        }
+        else
+        {
+            // Handle error (e.g., display a message)
+        }
+    }
+
+    public class RegisterModel
+    {
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email address.")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Password is required.")]
+        public string Password { get; set; }
+
+        [Required(ErrorMessage = "Confirm Password is required.")]
+        [Compare(nameof(Password), ErrorMessage = "Passwords do not match.")]
+        public string ConfirmPassword { get; set; }
+    }
+
+    public class ExternalLoginProvider
+    {
+        public string Name { get; set; }
+        public string DisplayName { get; set; }
+    }
 }

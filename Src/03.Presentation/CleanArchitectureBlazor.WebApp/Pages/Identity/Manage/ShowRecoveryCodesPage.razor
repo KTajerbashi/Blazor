@@ -1,26 +1,33 @@
 ﻿@page "/show-recovery-codes"
 
-<div class="container-fluid page-container">
-    <div class="row">
-        <div class="col-12">
-            <h6 class="alert alert-primary text-center">Show Recovery Codes Page</h6>
-            <div class="page-content">
-                <div class="container d-flex flex-row justify-content-around text-center gap-1">
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Email Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-primary">Phone Number Confirmed !</button>
-                    </div>
-                    <div class="col-4 border border-1 p-3">
-                        <button class="btn btn-outline-danger">Not Confirmed !!!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+<PageContainer Title="Show Recovery Codes Page">
+    <AlertMessage Message="@StatusMessage" />
+    <div class="alert alert-warning" role="alert">
+        <p>
+            <strong>Put these codes in a safe place.</strong>
+        </p>
+        <p>
+            If you lose your device and don't have the recovery codes, you will lose access to your account.
+        </p>
     </div>
-</div>
+    <div>
+        @for (var row = 0; row < RecoveryCodes.Length; row++)
+        {
+            <code class="recovery-code btn btn-outline-dark m-2">@RecoveryCodes[row]</code>
+        }
+    </div>
+</PageContainer>
+
+
 
 @code {
+    private string StatusMessage { get; set; }
+    private string[] RecoveryCodes { get; set; } = Array.Empty<string>();
 
+    protected override void OnInitialized()
+    {
+        // Fetch recovery codes from the backend or state management
+        RecoveryCodes = new[] { "CODE1", "CODE2", "CODE3", "CODE4", "CODE5", "CODE6" }; // Replace with actual recovery codes
+    }
 }
