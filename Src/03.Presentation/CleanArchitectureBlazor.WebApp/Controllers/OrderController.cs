@@ -23,6 +23,7 @@ public class OrderController : BaseContorller
     [HttpPut]
     public async Task<IActionResult> Update()
     {
+        await Task.CompletedTask;
         return Ok($"Updated {10}");
     }
 

@@ -18,7 +18,7 @@ public class ProductController : BaseContorller
     }
 
     [HttpGet("GetInfo")]
-    public async Task<IActionResult> GetInfo()
+    public IActionResult GetInfo()
     {
         var res = new
         {
@@ -29,11 +29,12 @@ public class ProductController : BaseContorller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(long productId,string title, string description, int price, long categoryId)
+    public async Task<IActionResult> Create(long productId, string title, string description, int price, long categoryId)
     {
         //_repository.BeginTransaction();
         try
         {
+            await Task.CompletedTask;
             var entity = new Product(productId,title,description,price,categoryId);
             entity.ChangePrice(price + 10);
             entity.ChangePrice(price + 20);
@@ -90,6 +91,7 @@ public class ProductController : BaseContorller
     {
         try
         {
+            await Task.CompletedTask;
             var events = _repository.Get(productId);
             return Ok(events);
         }

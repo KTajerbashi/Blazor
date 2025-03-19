@@ -24,6 +24,7 @@ public class CategoryController : BaseContorller
     [HttpPut]
     public async Task<IActionResult> Update()
     {
+            await Task.CompletedTask;
         return Ok($"Updated {10}");
     }
 
