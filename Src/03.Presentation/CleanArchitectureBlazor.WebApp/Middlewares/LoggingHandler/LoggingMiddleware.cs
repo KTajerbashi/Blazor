@@ -58,7 +58,7 @@ public class LoggingMiddleware
 
         var body = request.Body;
         var buffer = new byte[Convert.ToInt32(request.ContentLength)];
-        await request.Body.ReadAsync(buffer, 0, buffer.Length);
+        var res = await request.Body!.ReadAsync(buffer, 0, buffer.Length);
         var bodyAsText = Encoding.UTF8.GetString(buffer);
 
         // Reset the request body stream position so the next middleware can read it
