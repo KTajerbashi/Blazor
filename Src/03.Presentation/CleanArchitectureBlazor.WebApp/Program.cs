@@ -20,6 +20,7 @@ try
     builder.AddSerilogServices();
 
     builder.Services.AddWebAppDependecies(configuration);
+    
     builder.Services.AddLogging(loggingBuilder =>
     {
         loggingBuilder.AddConsole();

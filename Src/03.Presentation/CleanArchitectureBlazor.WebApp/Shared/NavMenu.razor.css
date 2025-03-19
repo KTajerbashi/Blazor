@@ -66,3 +66,44 @@
         overflow-y: auto;
     }
 }
+
+/* Custom CSS for NavMenu */
+.nav-scrollable {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.nav-item {
+    margin: 5px 0;
+}
+
+.nav-link {
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .nav-link:hover {
+        background-color: #e9ecef;
+        color: #007bff;
+    }
+
+    .nav-link.active {
+        background-color: #007bff;
+        color: white;
+    }
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }

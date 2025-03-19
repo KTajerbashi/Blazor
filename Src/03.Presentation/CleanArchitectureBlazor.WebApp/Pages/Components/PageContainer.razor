@@ -1,0 +1,25 @@
+﻿<PageTitle>@Title</PageTitle>
+
+<div class="container-fluid page-container">
+    <div class="row">
+        <div class="col-12">
+            <h6 class="alert alert-primary text-center">@Title</h6>
+            <div class="page-content @AdditionalClasses" style="@AdditionalStyles">
+                @ChildContent
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string AdditionalClasses { get; set; } = "";
+
+    [Parameter]
+    public string AdditionalStyles { get; set; } = "";
+}

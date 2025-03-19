@@ -3,40 +3,42 @@
 @using CleanArchitectureBlazor.Core.Domain.Categories.Entities
 @inject ICategoryRepository CategoryRepository
 
-<div class="container">
-    <div class="row border border-1 p-1 shadow my-1 rounded-2">
-        <div class="alert alert-dark">Create / Update</div>
-        <div class="col-12">
-            <div class="mb-2">
-                <label class="form-label">Category Title</label>
-                <input class="form-control" type="text" placeholder="Enter category" @bind="categoryTitle" />
+<PageContainer Title="Category Page">
+    <div class="container">
+        <div class="row border border-1 p-1 shadow my-1 rounded-2">
+            <div class="alert alert-dark">Create / Update</div>
+            <div class="col-12">
+                <div class="mb-2">
+                    <label class="form-label">Category Title</label>
+                    <input class="form-control" type="text" placeholder="Enter category" @bind="categoryTitle" />
+                </div>
+                <button class="btn btn-primary" @onclick="SaveCategory">Save</button>
             </div>
-            <button class="btn btn-primary" @onclick="SaveCategory">Save</button>
         </div>
-    </div>
-    <div class="row border border-1 p-1 shadow my-1 rounded-2">
-        <div class="alert alert-dark">Category List</div>
-        <div class="col-12">
-            <ul class="list-group">
-                @{
-                    int counter = 1;
-                    foreach (var item in _categories)
-                    {
-                        <li class="list-group-item d-flex flex-row justify-content-between">
-                            <span>@(counter++) ) @item.Title</span>
-                            <span>
-                                <button class="btn btn-outline-warning" @onclick="() => EditCategory(item)">Update</button>
-                                <button class="btn btn-outline-danger" @onclick="() => DeleteCategory(item.Key)">Delete</button>
-                            </span>
-                        </li>
+        <div class="row border border-1 p-1 shadow my-1 rounded-2">
+            <div class="alert alert-dark">Category List</div>
+            <div class="col-12">
+                <ul class="list-group">
+                    @{
+                        int counter = 1;
+                        foreach (var item in _categories)
+                        {
+                            <li class="list-group-item d-flex flex-row justify-content-between">
+                                <span>@(counter++) ) @item.Title</span>
+                                <span>
+                                    <button class="btn btn-outline-warning" @onclick="() => EditCategory(item)">Update</button>
+                                    <button class="btn btn-outline-danger" @onclick="() => DeleteCategory(item.Key)">Delete</button>
+                                </span>
+                            </li>
+                        }
+
                     }
-
-                }
-            </ul>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
+</PageContainer>
 @code {
     private List<Category> _categories = new();
     private string categoryTitle = string.Empty;

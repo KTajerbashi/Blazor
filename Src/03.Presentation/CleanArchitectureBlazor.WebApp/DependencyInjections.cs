@@ -3,6 +3,7 @@ using CleanArchitectureBlazor.Core.Application.Common.Extensions;
 using CleanArchitectureBlazor.Infra.Data.SqlServer;
 using CleanArchitectureBlazor.WebApp.Common.Swagger;
 using CleanArchitectureBlazor.WebApp.Data;
+using CleanArchitectureBlazor.WebApp.Extensions;
 using CleanArchitectureBlazor.WebApp.Middlewares.LoggingHandler;
 
 namespace CleanArchitectureBlazor.WebApp;
@@ -12,6 +13,9 @@ public static class DependencyInjections
     public static IServiceCollection AddWebAppDependecies(this IServiceCollection services, IConfiguration configuration)
     {
         var assemblies = AssemblyProviderExtensions.GetAssemblies(new string[] { "CleanArchitectureBlazor" });
+
+        // Register HttpClient
+        services.AddHttpClient(); // Register HttpClient with default configuration
 
         services.AddControllers();
 
@@ -23,7 +27,7 @@ public static class DependencyInjections
         services.AddServerSideBlazor();
 
         services.AddSingleton<WeatherForecastService>();
-
+        services.AddScoped<FileDownloadService>();
         services.AddServerSideBlazor();
 
         services.AddInfraDataDependecies(configuration, assemblies);

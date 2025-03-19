@@ -7,56 +7,58 @@
 @inject ICategoryRepository CategoryRepository
 
 
-<div class="container">
-    <h3 class="alert alert-dark">Product Management</h3>
-    <div class="row border border-1 p-2 shadow my-1 rounded-2">
-        <div class="alert alert-dark">Create / Update</div>
-        <div class="col-12">
-            <div class="mb-2">
-                <label class="form-label">Title</label>
-                <input class="form-control" type="text" placeholder="Enter product title" @bind="productTitle" />
+<PageContainer Title="Product Page">
+    <div class="container">
+        <h3 class="alert alert-dark">Product Management</h3>
+        <div class="row border border-1 p-2 shadow my-1 rounded-2">
+            <div class="alert alert-dark">Create / Update</div>
+            <div class="col-12">
+                <div class="mb-2">
+                    <label class="form-label">Title</label>
+                    <input class="form-control" type="text" placeholder="Enter product title" @bind="productTitle" />
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Description</label>
+                    <input class="form-control" type="text" placeholder="Enter product description" @bind="productDescription" />
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Price</label>
+                    <input class="form-control" type="number" placeholder="Enter product price" @bind="productPrice" />
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Category</label>
+                    <select class="form-control" @bind="selectedCategoryId">
+                        <option value="0">Select a category</option>
+                        @foreach (var category in _categories)
+                        {
+                            <option value="@category.Id">@category.Title</option>
+                        }
+                    </select>
+                </div>
+                <button class="btn btn-primary" @onclick="SaveProduct">Save</button>
             </div>
-            <div class="mb-2">
-                <label class="form-label">Description</label>
-                <input class="form-control" type="text" placeholder="Enter product description" @bind="productDescription" />
-            </div>
-            <div class="mb-2">
-                <label class="form-label">Price</label>
-                <input class="form-control" type="number" placeholder="Enter product price" @bind="productPrice" />
-            </div>
-            <div class="mb-2">
-                <label class="form-label">Category</label>
-                <select class="form-control" @bind="selectedCategoryId">
-                    <option value="0">Select a category</option>
-                    @foreach (var category in _categories)
+        </div>
+
+        <div class="row border border-1 p-2 shadow my-1 rounded-2">
+            <div class="alert alert-dark">Product List</div>
+            <div class="col-12">
+                <ul class="list-group">
+                    @foreach (var product in _products)
                     {
-                        <option value="@category.Id">@category.Title</option>
+                        <li class="list-group-item d-flex flex-row justify-content-between">
+                            <span>@product.Title - @product.Description - $@product.Price</span>
+                            <span>
+                                <button class="btn btn-outline-warning" @onclick="() => EditProduct(product)">Update</button>
+                                <button class="btn btn-outline-danger" @onclick="() => DeleteProduct(product.Id)">Delete</button>
+                            </span>
+                        </li>
                     }
-                </select>
+                </ul>
             </div>
-            <button class="btn btn-primary" @onclick="SaveProduct">Save</button>
         </div>
     </div>
 
-    <div class="row border border-1 p-2 shadow my-1 rounded-2">
-        <div class="alert alert-dark">Product List</div>
-        <div class="col-12">
-            <ul class="list-group">
-                @foreach (var product in _products)
-                {
-                    <li class="list-group-item d-flex flex-row justify-content-between">
-                        <span>@product.Title - @product.Description - $@product.Price</span>
-                        <span>
-                            <button class="btn btn-outline-warning" @onclick="() => EditProduct(product)">Update</button>
-                            <button class="btn btn-outline-danger" @onclick="() => DeleteProduct(product.Id)">Delete</button>
-                        </span>
-                    </li>
-                }
-            </ul>
-        </div>
-    </div>
-</div>
-
+</PageContainer>
 @code {
     private List<Product> _products = new();
     private List<Category> _categories = new();

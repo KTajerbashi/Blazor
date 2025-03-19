@@ -30,5 +30,16 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
+
+    <script>
+        function downloadFile(fileName, streamRef) {
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(new Blob([streamRef], { type: 'application/octet-stream' }));
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>

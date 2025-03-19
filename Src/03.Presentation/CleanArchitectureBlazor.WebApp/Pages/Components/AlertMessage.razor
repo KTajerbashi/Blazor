@@ -1,0 +1,33 @@
+﻿@if (!string.IsNullOrEmpty(Message))
+{
+    <div class="alert alert-@AlertType d-flex flex-row justify-content-between align-items-center" role="alert">
+        <span>@Message</span>
+        <button @onclick="Reset" class="btn">❌</button>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string Message { get; set; }
+
+    [Parameter]
+    public string AlertType { get; set; } = "info"; // Default to "info"
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine("S");
+        if (!string.IsNullOrEmpty(Message))
+        {
+            // Automatically close the alert after 3 seconds
+            await Task.Delay(3000);
+            Reset();
+        }
+        Console.WriteLine("E");
+    }
+
+    void Reset()
+    {
+        Message = string.Empty;
+        Console.WriteLine("Message : {0}",Message);
+    }
+}

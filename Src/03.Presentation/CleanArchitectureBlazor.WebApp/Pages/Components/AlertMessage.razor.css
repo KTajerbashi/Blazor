@@ -1,0 +1,21 @@
+﻿/* Custom CSS for AlertComponent */
+.alert {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+    .alert button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.25rem;
+        padding: 0;
+        margin-left: 1rem;
+        outline: none;
+        border: 0px solid black;
+    }
+
+        .alert button:hover {
+            opacity: 0.75;
+        }
