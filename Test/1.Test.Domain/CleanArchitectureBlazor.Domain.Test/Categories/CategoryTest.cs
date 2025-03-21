@@ -1,9 +1,12 @@
 ﻿using CleanArchitectureBlazor.Core.Domain.Categories.Entities;
 
-namespace CleanArchitectureBlazor.Domain.Test;
-
+namespace CleanArchitectureBlazor.Domain.Test.Categories;
 public class CategoryTest
 {
+    public CategoryTest()
+    {
+
+    }
     [Fact]
     public void CategoryTitle_ShouldMatchAnyKeyword_WhenKeywordsContainTitle()
     {
@@ -36,3 +39,4 @@ public class CategoryTest
 
 
 }
+

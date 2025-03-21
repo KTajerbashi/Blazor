@@ -7,7 +7,14 @@ namespace CleanArchitectureBlazor.Core.Domain.Categories.Entities;
 public class Category : Aggregate
 {
     public string Title { get; private set; }
-
+    public string KeyUniq { get; private set; }
+    public void SetKey(string value)
+    {
+        if (value == KeyUniq) return;
+        if (string.IsNullOrWhiteSpace(value))
+            throw new ArgumentException("Key cannot be null or empty.");
+        KeyUniq = value;
+    }
     public Category(string title)
     {
         Title = title;
