@@ -19,4 +19,6 @@ public class Category : Aggregate
         Title = title;
         AddEvent(new CategoryTitleUpdated(Title,Id));
     }
+
+
 }
