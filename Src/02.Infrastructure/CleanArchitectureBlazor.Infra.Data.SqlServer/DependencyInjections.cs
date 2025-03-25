@@ -7,6 +7,7 @@ using CleanArchitectureBlazor.Core.Application.Products;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Categories;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Common;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Common.DataBase;
+using CleanArchitectureBlazor.Infra.Data.SqlServer.Common.Providers.JsonConvertor;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Customers;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Identity.Entities;
 using CleanArchitectureBlazor.Infra.Data.SqlServer.Orders;
@@ -44,6 +45,7 @@ public static class DependencyInjections
     private static IServiceCollection AddDependencies(this IServiceCollection services)
     {
         services.AddScoped<IEventStore, EventStore>();
+        services.AddNewtonSoftSerializer();
         return services;
     }
     private static IServiceCollection AddSingletonRepositories(this IServiceCollection services, Assembly[] assemblies)

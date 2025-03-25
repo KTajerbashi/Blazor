@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CleanArchitectureBlazor.Core.Application.Common.Providers;
 
-namespace CleanArchitectureBlazor.Core.Application.Common.Providers
+public interface IJsonConvertor
 {
-    internal interface IJsonConvertor
-    {
-    }
+    string Serialize<TInput>(TInput input);
+    TOutput Deserialize<TOutput>(string input);
+    object Deserialize(string input, Type type);
 }

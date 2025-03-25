@@ -3,7 +3,6 @@ using CleanArchitectureBlazor.WebApp.Common.BaseApi;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitectureBlazor.WebApp.Controllers;
-
 public class CategoryController : BaseContorller
 {
     private readonly ILogger<CategoryController> _logger;
