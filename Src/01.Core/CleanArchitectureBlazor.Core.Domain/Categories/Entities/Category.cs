@@ -10,9 +10,9 @@ public class Category : Aggregate
     public string KeyUniq { get; private set; }
     public void SetKey(string value)
     {
-        if (value == KeyUniq) return;
         if (string.IsNullOrWhiteSpace(value))
             throw new ArgumentException("Key cannot be null or empty.");
+        if (value == KeyUniq) return;
         KeyUniq = value;
     }
     public Category(string title)
