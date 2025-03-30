@@ -1,0 +1,75 @@
+﻿@page "/profile"
+@attribute [Authorize]
+@using BlazorSolution.Core.Application.Users
+@using BlazorSolution.Core.Application.Users.Models
+@using BlazorSolution.Core.Domain.Users
+@inject IUserRepository UserRepository
+@inject NavigationManager Navigation
+
+
+<PageContainer Title="Profile">
+    <h3 class="alert alert-dark">User Profile</h3>
+
+    <div class="container-fluid">
+        <div class="row border border-1 p-2 shadow my-1 rounded-2">
+            <div class="alert alert-dark">Profile Information</div>
+            <div class="col-12">
+                <div class="mb-2">
+                    <label class="form-label">Full Name</label>
+                    <input class="form-control" type="text" placeholder="Enter your name" @bind="fullName" />
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Email</label>
+                    <input class="form-control" type="email" placeholder="Enter your email" @bind="email" disabled />
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Phone Number</label>
+                    <input class="form-control" type="text" placeholder="Enter your phone number" @bind="phoneNumber" />
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Address</label>
+                    <textarea class="form-control" placeholder="Enter your address" @bind="address"></textarea>
+                </div>
+                <button class="btn btn-outline-primary w-100" @onclick="SaveProfile">Save</button>
+            </div>
+        </div>
+    </div>
+
+</PageContainer>
+
+@code {
+    private UserProfileDTO _userProfile = new();
+    private string fullName = string.Empty;
+    private string email = string.Empty;
+    private string phoneNumber = string.Empty;
+    private string address = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUserProfile();
+    }
+
+    private async Task LoadUserProfile()
+    {
+        var user = await UserRepository.GetCurrentUserAsync(CancellationToken.None);
+        if (user != null)
+        {
+            _userProfile = user;
+            fullName = user.FullName;
+            email = user.Email;
+            phoneNumber = user.PhoneNumber;
+            address = user.Address;
+        }
+    }
+
+    private async Task SaveProfile()
+    {
+        await Task.CompletedTask;
+        if (!string.IsNullOrWhiteSpace(fullName))
+        {
+            // _userProfile.UpdateProfile(fullName, phoneNumber, address);
+            // await UserRepository.UpdateAsync(_userProfile, CancellationToken.None);
+            Navigation.NavigateTo("/profile", true);
+        }
+    }
+}
