@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureBlazor.Domain.Test.Exceptions;
+﻿namespace BlazorSolution.Domain.Test.Exceptions;
 
 public class DataExistException : Exception
 {

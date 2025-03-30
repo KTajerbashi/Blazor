@@ -1,8 +1,8 @@
-﻿using CleanArchitectureBlazor.Core.Domain.Categories.Entities;
-using CleanArchitectureBlazor.Domain.Test.Exceptions;
+﻿using BlazorSolution.Domain.Test.Exceptions;
+using BlazorSolution.Core.Domain.Categories.Entities;
 using Moq;
 
-namespace CleanArchitectureBlazor.Domain.Test.Categories;
+namespace BlazorSolution.Domain.Test.Categories;
 
 public class CategoryCrudTests
 {

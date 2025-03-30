@@ -1,6 +1,6 @@
-﻿using CleanArchitectureBlazor.Core.Domain.Categories.Entities;
+﻿using BlazorSolution.Core.Domain.Categories.Entities;
 
-namespace CleanArchitectureBlazor.Domain.Test.Categories;
+namespace BlazorSolution.Domain.Test.Categories;
 public class CategoryTest
 {
     public CategoryTest()
