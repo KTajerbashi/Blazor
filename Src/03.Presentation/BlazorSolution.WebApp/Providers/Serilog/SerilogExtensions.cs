@@ -1,36 +1,119 @@
-﻿namespace BlazorSolution.WebApp.Providers.Serilog;
+﻿using BlazorSolution.WebApp.Extensions;
+using NuGet.Protocol;
+using System.Diagnostics;
+using System.Text;
+
+namespace BlazorSolution.WebApp.Providers.Serilog;
 
 public static class SerilogExtensions
 {
-    public static WebApplicationBuilder AddSerilogServices(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddSerilog(this WebApplicationBuilder builder)
     {
-        // Configure Serilog
-        //builder.Host.UseSerilog((context, configuration) =>
-        //{
-        //    configuration
-        //        .ReadFrom.Configuration(context.Configuration) // Read from appsettings.json
-        //        .Enrich.FromLogContext();
-        //});
-        builder.Host.UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
-            .ReadFrom.Configuration(hostingContext.Configuration)
+        builder.Services.AddLogging(); // ILogger is usually registered by default
+
+        // Read configuration from appsettings.json
+        Log.Logger = new LoggerConfiguration()
+            .ReadFrom.Configuration(builder.Configuration)  // reads Serilog section
             .Enrich.FromLogContext()
-            .WriteTo.Console());
+            //.Enrich.WithMachineName()
+            //.Enrich.WithThreadId()
+            .CreateLogger();
+
+        builder.Host.UseSerilog(Log.Logger, dispose: true);
         return builder;
     }
 
-    public static WebApplication UseSerilogServices(this WebApplication app)
+    public static WebApplication UseSerilog(this WebApplication app)
     {
-        app.Use(async (context, next) =>
-        {
-            using (LogContext.PushProperty("UserIp", context.Connection.RemoteIpAddress))
-            using (LogContext.PushProperty("UserAgent", context.Request.Headers["User-Agent"].ToString()))
-            using (LogContext.PushProperty("UserId", context.User.FindFirst("sub")?.Value ?? "Anonymous"))
-            using (LogContext.PushProperty("UserRoleId", context.User.FindFirst("role")?.Value ?? "Unknown"))
-            {
-                await next();
-            }
-        });
+
+        app.UseMiddleware<SerilogEnrichmentMiddleware>();
+     
+        app.UseSerilogRequestLogging();
 
         return app;
+    }
+}
+
+public class SerilogEnrichmentMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public SerilogEnrichmentMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        var sw = Stopwatch.StartNew();
+        var requestId = context.TraceIdentifier ?? Guid.NewGuid().ToString();
+        var descriptor = context.GetControllerActionNames();
+
+        string controller = descriptor.Controller ?? "N/A";
+        string action = descriptor.Action ?? "N/A";
+        string httpMethod = context.Request.Method;
+        string parameters = string.Empty;
+
+        // ✅ Capture parameters by HTTP method
+        if (httpMethod == HttpMethods.Get || httpMethod == HttpMethods.Delete)
+        {
+            parameters = context.Request.QueryString.HasValue
+                ? context.Request.QueryString.Value!
+                : context.Request.RouteValues.ToJson();
+        }
+        else if (httpMethod == HttpMethods.Post || httpMethod == HttpMethods.Put || httpMethod == HttpMethods.Patch)
+        {
+            parameters = await ReadRequestBodyAsync(context);
+        }
+
+        string userId = context.User?.Identity?.IsAuthenticated == true
+            ? context.User.Identity?.Name ?? "Unknown"
+            : "Anonymous";
+
+        string userIp = context.Connection.RemoteIpAddress?.ToString() ?? "N/A";
+
+
+        using (LogContext.PushProperty("RequestId", requestId))
+        using (LogContext.PushProperty("HttpMethod", httpMethod))
+        using (LogContext.PushProperty("Controller", controller))
+        using (LogContext.PushProperty("Action", action))
+        using (LogContext.PushProperty("Parameters", parameters))
+        using (LogContext.PushProperty("UserId", userId))
+        using (LogContext.PushProperty("UserIp", userIp))
+        {
+            await _next(context);
+
+            sw.Stop();
+
+
+        }
+        // Format duration as HH:mm:ss.fff
+        string formattedDuration = TimeSpan.FromMilliseconds(sw.ElapsedMilliseconds)
+                                        .ToString(@"hh\:mm\:ss\.fff");
+
+        using (LogContext.PushProperty("Duration", formattedDuration))
+        using (LogContext.PushProperty("StatusCode", context.Response?.StatusCode))
+        {
+
+            // Serilog picks up properties automatically
+        }
+
+    }
+
+    private static async Task<string> ReadRequestBodyAsync(HttpContext context)
+    {
+        context.Request.EnableBuffering();
+
+        using var reader = new StreamReader(
+            context.Request.Body,
+            Encoding.UTF8,
+            detectEncodingFromByteOrderMarks: false,
+            bufferSize: 1024,
+            leaveOpen: true);
+
+        string body = await reader.ReadToEndAsync();
+        context.Request.Body.Position = 0; // rewind so controller can still read
+
+        return body;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BlazorSolution.WebApp.Components;
+using BlazorSolution.WebApp.Providers.Serilog;
 
 namespace BlazorSolution.WebApp;
 
@@ -6,6 +7,7 @@ public static class DependencyInjections
 {
     public static WebApplication AddWebAppServices(this WebApplicationBuilder builder)
     {
+        builder.AddSerilog();
         // Add services to the container.
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
@@ -22,8 +24,9 @@ public static class DependencyInjections
             app.UseHsts();
         }
 
-        app.UseHttpsRedirection();
+        app.UseSerilog();
 
+        app.UseHttpsRedirection();
 
         app.UseAntiforgery();
 
