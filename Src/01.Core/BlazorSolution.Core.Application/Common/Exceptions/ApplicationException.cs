@@ -1,9 +1,9 @@
 ﻿namespace BlazorSolution.Core.Application.Common.Exceptions;
 
-public class ApplicationException : Exception
+public class AppException : Exception
 {
-    public ApplicationException(string msg) : base(msg) { }
-    public ApplicationException(string msg, Exception exception) : base(msg, exception) { }
+    public AppException(string msg) : base(msg) { }
+    public AppException(string msg, Exception exception) : base(msg, exception) { }
 }
 
 

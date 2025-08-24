@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\..\01.Core\BlazorSolution.Core.Application\BlazorSolution.Core.Application.csproj" />
+		<ProjectReference Include="..\..\02.Infrastructure\BlazorSolution.Infra.Data.SqlServer\BlazorSolution.Infra.Data.SqlServer.csproj" />
+	</ItemGroup>
+	
 </Project>
