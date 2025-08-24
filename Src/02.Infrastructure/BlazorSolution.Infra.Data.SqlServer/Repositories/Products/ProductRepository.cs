@@ -4,7 +4,7 @@ using BlazorSolution.Core.Domain.Products.Entities;
 using BlazorSolution.Infra.Data.SqlServer.Common;
 using BlazorSolution.Infra.Data.SqlServer.Common.DataBase;
 
-namespace BlazorSolution.Infra.Data.SqlServer.Products;
+namespace BlazorSolution.Infra.Data.SqlServer.Repositories.Products;
 public class ProductRepository : AggregateRepository<DataContext, Product, long>, IProductRepository
 {
     private readonly IEventStore _eventStore;

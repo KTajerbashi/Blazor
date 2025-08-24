@@ -4,7 +4,7 @@ using BlazorSolution.Core.Domain.Users.Entities;
 using BlazorSolution.Infra.Data.SqlServer.Common;
 using BlazorSolution.Infra.Data.SqlServer.Common.DataBase;
 
-namespace BlazorSolution.Infra.Data.SqlServer.Users;
+namespace BlazorSolution.Infra.Data.SqlServer.Repositories.Users;
 
 public class UserRepository : AggregateRepository<DataContext, User, long>, IUserRepository
 {

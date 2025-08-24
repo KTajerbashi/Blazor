@@ -3,7 +3,7 @@ using BlazorSolution.Core.Domain.Orders.Entities;
 using BlazorSolution.Infra.Data.SqlServer.Common;
 using BlazorSolution.Infra.Data.SqlServer.Common.DataBase;
 
-namespace BlazorSolution.Infra.Data.SqlServer.Orders;
+namespace BlazorSolution.Infra.Data.SqlServer.Repositories.Orders;
 
 public class OrderRepository : AggregateRepository<DataContext, Order, long>, IOrderRepository
 {

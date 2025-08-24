@@ -3,7 +3,7 @@ using BlazorSolution.Core.Domain.Customers.Entities;
 using BlazorSolution.Infra.Data.SqlServer.Common;
 using BlazorSolution.Infra.Data.SqlServer.Common.DataBase;
 
-namespace BlazorSolution.Infra.Data.SqlServer.Customers;
+namespace BlazorSolution.Infra.Data.SqlServer.Repositories.Customers;
 
 public class CustomerRepository : AggregateRepository<DataContext, Customer, long>, ICustomerRepository
 {

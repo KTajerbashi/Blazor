@@ -3,17 +3,7 @@ using BlazorSolution.Infra.Data.SqlServer.Common;
 using BlazorSolution.Infra.Data.SqlServer.Common.DataBase;
 using BlazorSolution.Infra.Data.SqlServer.Common.Providers.JsonConvertor;
 using BlazorSolution.Infra.Data.SqlServer.Identity.Entities;
-using BlazorSolution.Core.Application.Categories;
-using BlazorSolution.Core.Application.Common.Extensions;
-using BlazorSolution.Core.Application.Customers;
-using BlazorSolution.Core.Application.Orders;
-using BlazorSolution.Core.Application.Products;
-using BlazorSolution.Infra.Data.SqlServer.Categories;
-using BlazorSolution.Infra.Data.SqlServer.Customers;
-using BlazorSolution.Infra.Data.SqlServer.Orders;
-using BlazorSolution.Infra.Data.SqlServer.Products;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Scrutor;
@@ -50,14 +40,14 @@ public static class DependencyInjections
     }
     private static IServiceCollection AddSingletonRepositories(this IServiceCollection services, Assembly[] assemblies)
     {
-        //services
-        //    .Scan(scan => scan
-        //        .FromAssemblies(assemblies)
-        //        .AddClasses(classes => classes.AssignableTo(typeof(IAggregateRepository<,>)))
-        //        .UsingRegistrationStrategy(RegistrationStrategy.Skip)
-        //        .AsImplementedInterfaces()
-        //        .WithSingletonLifetime()
-        //    );
+        services
+            .Scan(scan => scan
+                .FromAssemblies(assemblies)
+                .AddClasses(classes => classes.AssignableTo(typeof(IAggregateRepository<,>)))
+                .UsingRegistrationStrategy(RegistrationStrategy.Skip)
+                .AsImplementedInterfaces()
+                .WithSingletonLifetime()
+            );
         return services;
     }
     private static IServiceCollection AddScopeRepositories(this IServiceCollection services, Assembly[] assemblies)
@@ -87,14 +77,14 @@ public static class DependencyInjections
     }
     private static IServiceCollection AddTransientRepositories(this IServiceCollection services, Assembly[] assemblies)
     {
-        //services
-        //.Scan(scan => scan
-        //    .FromAssemblies(assemblies)
-        //    .AddClasses(classes => classes.AssignableTo(typeof(IAggregateRepository<,>)))
-        //    .UsingRegistrationStrategy(RegistrationStrategy.Skip)
-        //    .AsImplementedInterfaces()
-        //    .WithTransientLifetime()
-        //);
+        services
+        .Scan(scan => scan
+            .FromAssemblies(assemblies)
+            .AddClasses(classes => classes.AssignableTo(typeof(IAggregateRepository<,>)))
+            .UsingRegistrationStrategy(RegistrationStrategy.Skip)
+            .AsImplementedInterfaces()
+            .WithTransientLifetime()
+        );
         return services;
     }
 
@@ -104,7 +94,6 @@ public static class DependencyInjections
             .AddIdentity<ApplicationUser, ApplicationRole>()
             .AddEntityFrameworkStores<DataContext>()
             .AddDefaultTokenProviders()
-            //.AddUserManager<ApplicationUser>()
             ;
 
         return services;
