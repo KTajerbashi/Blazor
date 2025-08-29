@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{FF1A74AD-D26
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.BlazorWebApp", "1.BlazorWebApp", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.BlazorServerApp", "2.BlazorServerApp", "{EEBD5E1D-97DF-4B51-B795-5BA131D1795E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.BlazorWebAssemblyApp", "3.BlazorWebAssemblyApp", "{4A666835-31BD-4554-BF9A-88A30E2DE949}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.BlazorWebAssemblyApp", "2.BlazorWebAssemblyApp", "{4A666835-31BD-4554-BF9A-88A30E2DE949}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp", "Src\1.BlazorWebApp\BlazorWebApp\BlazorWebApp\BlazorWebApp.csproj", "{D13C7320-B239-4943-8E34-A084F19D6BEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp.Client", "Src\1.BlazorWebApp\BlazorWebApp\BlazorWebApp.Client\BlazorWebApp.Client.csproj", "{DA6CE97A-94C5-4602-BD4A-124264A4F630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAssemblyApp", "Src\2.BlazorWebAssemblyApp\BlazorWebAssemblyApp\BlazorWebAssemblyApp.csproj", "{53EA9856-2E85-459E-B50B-0A12D1D024B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,16 +29,20 @@ Global
 		{DA6CE97A-94C5-4602-BD4A-124264A4F630}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA6CE97A-94C5-4602-BD4A-124264A4F630}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA6CE97A-94C5-4602-BD4A-124264A4F630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53EA9856-2E85-459E-B50B-0A12D1D024B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53EA9856-2E85-459E-B50B-0A12D1D024B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53EA9856-2E85-459E-B50B-0A12D1D024B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53EA9856-2E85-459E-B50B-0A12D1D024B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {FF1A74AD-D266-4B98-ABEB-A858A273264E}
-		{EEBD5E1D-97DF-4B51-B795-5BA131D1795E} = {FF1A74AD-D266-4B98-ABEB-A858A273264E}
 		{4A666835-31BD-4554-BF9A-88A30E2DE949} = {FF1A74AD-D266-4B98-ABEB-A858A273264E}
 		{D13C7320-B239-4943-8E34-A084F19D6BEE} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{DA6CE97A-94C5-4602-BD4A-124264A4F630} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{53EA9856-2E85-459E-B50B-0A12D1D024B2} = {4A666835-31BD-4554-BF9A-88A30E2DE949}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6D48B64-D376-4F98-8356-0CC21945C4EA}
