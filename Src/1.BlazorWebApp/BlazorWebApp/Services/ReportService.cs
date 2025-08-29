@@ -1,7 +1,6 @@
 ﻿using Microsoft.JSInterop;
 
 namespace BlazorWebApp.Services;
-
 public class ReportService
 {
     private readonly HttpClient _http;

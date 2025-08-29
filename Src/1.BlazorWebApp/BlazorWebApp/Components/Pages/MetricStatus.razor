@@ -1,0 +1,112 @@
+﻿@page "/metric-status"
+@rendermode InteractiveServer
+@using BlazorWebApp.Repositories
+@inject IMetricsService MetricsService
+@implements IDisposable
+
+<h3>Example Page with Metrics</h3>
+
+<div class="button-group">
+    <button @onclick="SimulateDatabaseQuery" class="btn btn-primary">
+        Simulate DB Query
+    </button>
+
+    <button @onclick="SimulateLogin" class="btn btn-success">
+        Simulate Login
+    </button>
+
+    <button @onclick="TrackCustomEvent" class="btn btn-info">
+        Track Business Event
+    </button>
+
+    <button @onclick="SimulateLongRunningRequest" class="btn btn-warning">
+        Simulate Long Request
+    </button>
+
+    <button @onclick="StartContinuousMeasurement" class="btn btn-secondary">
+        Start Continuous Measurement
+    </button>
+
+    <button @onclick="StopContinuousMeasurement" class="btn btn-danger">
+        Stop Continuous Measurement
+    </button>
+</div>
+
+@if (_lastOperation != null)
+{
+    <div class="alert alert-info mt-3">
+        Last operation: @_lastOperation
+    </div>
+}
+
+@if (_continuousMeasurementActive)
+{
+    <div class="alert alert-warning mt-3">
+        Continuous measurement active. Current value: @_currentValue
+    </div>
+}
+
+@code {
+    private string? _lastOperation;
+    private bool _continuousMeasurementActive = false;
+    private double _currentValue = 0;
+    private Timer? _continuousTimer;
+
+    private async Task SimulateDatabaseQuery()
+    {
+        var random = new Random();
+        var delay = random.Next(50, 500);
+        await Task.Delay(delay);
+
+        MetricsService.TrackDatabaseQueryTime("GetUsers", delay);
+        _lastOperation = $"Database query simulated with {delay}ms delay";
+    }
+
+    private void SimulateLogin()
+    {
+        MetricsService.TrackUserLogin("testuser@example.com");
+        _lastOperation = "User login tracked for testuser@example.com";
+    }
+
+    private void TrackCustomEvent()
+    {
+        MetricsService.TrackBusinessEvent("ButtonClicked", "UI");
+        _lastOperation = "Custom business event tracked";
+    }
+
+    private async Task SimulateLongRunningRequest()
+    {
+        using (var timer = MetricsService.TrackRequestDuration("SimulateLongRunningRequest"))
+        {
+            await Task.Delay(2000);
+            _lastOperation = "Long running request completed (2s)";
+        }
+    }
+
+    private void StartContinuousMeasurement()
+    {
+        _continuousMeasurementActive = true;
+        _continuousTimer = new Timer(_ =>
+        {
+            _currentValue = new Random().NextDouble() * 100;
+            MetricsService.TrackGaugeValue("custom_measurement", _currentValue,
+                new KeyValuePair<string, object?>("source", "continuous"));
+
+            InvokeAsync(StateHasChanged);
+        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
+
+        _lastOperation = "Continuous measurement started";
+    }
+
+    private void StopContinuousMeasurement()
+    {
+        _continuousMeasurementActive = false;
+        _continuousTimer?.Dispose();
+        _lastOperation = "Continuous measurement stopped";
+    }
+
+    public void Dispose()
+    {
+        _continuousTimer?.Dispose();
+    }
+}

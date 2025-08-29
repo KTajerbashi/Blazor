@@ -1,0 +1,154 @@
+﻿@page "/metrics-dashboard"
+@rendermode InteractiveServer
+@using BlazorWebApp.Repositories
+@inject NavigationManager NavigationManager
+@inject IMetricsService MetricsService
+
+<h3>Application Metrics Dashboard</h3>
+
+<div class="grid">
+    <div class="card">
+        <div class="card-header">
+            <h5>Prometheus Metrics Endpoint</h5>
+        </div>
+        <div class="card-body">
+            <p>Your metrics are available at:</p>
+            <div class="alert alert-info">
+                <strong>@($"{NavigationManager.BaseUri}metrics")</strong>
+            </div>
+
+            <p>This endpoint is ready to be scraped by Prometheus.</p>
+
+            <div class="mt-3">
+                <a href="metrics" target="_blank" class="btn btn-primary">
+                    <i class="bi bi-bar-chart"></i> View Raw Metrics
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5>Quick Test</h5>
+        </div>
+        <div class="card-body">
+            <p>Test your metrics by generating some sample data:</p>
+
+            <div class="btn-group-vertical w-100">
+                <button @onclick="TrackPageView" class="btn btn-outline-primary">
+                    Track Page View
+                </button>
+                <button @onclick="TrackLogin" class="btn btn-outline-success">
+                    Track User Login
+                </button>
+                <button @onclick="TrackDatabaseQuery" class="btn btn-outline-warning">
+                    Track Database Query
+                </button>
+                <button @onclick="TrackException" class="btn btn-outline-danger">
+                    Track Exception
+                </button>
+            </div>
+
+            @if (!string.IsNullOrEmpty(_testResult))
+            {
+                <div class="alert alert-info mt-3">
+                    @_testResult
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5>Next Steps</h5>
+        </div>
+        <div class="card-body">
+            <h6>To set up monitoring:</h6>
+            <ol>
+                <li>Install <a href="https://prometheus.io/download/" target="_blank">Prometheus</a></li>
+                <li>Configure Prometheus to scrape: <code>@($"{NavigationManager.BaseUri}metrics")</code></li>
+                <li>Install <a href="https://grafana.com/grafana/download" target="_blank">Grafana</a></li>
+                <li>Add Prometheus as a data source in Grafana</li>
+                <li>Create dashboards with your metrics</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5>Sample Prometheus Config</h5>
+        </div>
+        <div class="card-body">
+            <pre class="bg-light p-3"><code># prometheus.yml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'blazor-app'
+    static_configs:
+      - targets: ['localhost:5000', 'localhost:5001']
+    metrics_path: '/metrics'</code></pre>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string? _testResult;
+
+    private void TrackPageView()
+    {
+        MetricsService.TrackPageView("/test-page");
+        _testResult = "Page view tracked for /test-page";
+    }
+
+    private void TrackLogin()
+    {
+        MetricsService.TrackUserLogin("testuser@example.com");
+        _testResult = "User login tracked for testuser@example.com";
+    }
+
+    private async Task TrackDatabaseQuery()
+    {
+        using (var timer = MetricsService.TrackRequestDuration("TestQuery"))
+        {
+            await Task.Delay(new Random().Next(100, 500));
+            MetricsService.TrackDatabaseQueryTime("GetTestData", new Random().Next(50, 300));
+            _testResult = "Database query tracked with random duration";
+        }
+    }
+
+    private void TrackException()
+    {
+        try
+        {
+            throw new InvalidOperationException("Test exception for metrics");
+        }
+        catch (Exception ex)
+        {
+            MetricsService.TrackException(ex.GetType().Name);
+            _testResult = $"Exception tracked: {ex.GetType().Name}";
+        }
+    }
+}
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .card {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .btn-group-vertical .btn {
+        margin-bottom: 0.5rem;
+    }
+
+    pre {
+        font-size: 0.9rem;
+        overflow-x: auto;
+    }
+</style>

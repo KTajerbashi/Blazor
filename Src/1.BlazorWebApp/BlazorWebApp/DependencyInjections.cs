@@ -3,6 +3,9 @@ using BlazorWebApp.Middlewares.ExceptionHandler;
 using BlazorWebApp.Repositories;
 using BlazorWebApp.Services;
 using Microsoft.AspNetCore.ResponseCompression;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 
 namespace BlazorWebApp;
 
@@ -17,9 +20,20 @@ public static class DependencyInjections
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
-        // Add services for Blazor Web App (NEW pattern)
-        builder.Services.AddRazorComponents()
-            .AddInteractiveServerComponents();
+        #region OpenTelemetry
+        // Configure OpenTelemetry Metrics ONLY (no OTLP)
+        builder.Services.AddOpenTelemetry()
+         .WithMetrics(metrics =>
+         {
+             metrics.AddPrometheusExporter();
+             metrics.AddMeter("BlazorServerApp.Metrics");
+             metrics.AddAspNetCoreInstrumentation();
+             metrics.AddRuntimeInstrumentation();
+         });
+
+        // Register metrics service
+        builder.Services.AddSingleton<IMetricsService, OpenTelemetryMetricsService>();
+        #endregion
 
         // In AddWebAppServices method, if needed:
         builder.Services.AddAntiforgery(options =>
@@ -61,6 +75,9 @@ public static class DependencyInjections
         app.UseStaticFiles();
 
         app.UseRouting();
+
+        // Use OpenTelemetry Prometheus scraping endpoint
+        app.UseOpenTelemetryPrometheusScrapingEndpoint();
         //app.UseAuthentication();    // If you have authentication
         //app.UseAuthorization();     // If you have authorization
         app.UseAntiforgery();       // Anti-forgery after auth
