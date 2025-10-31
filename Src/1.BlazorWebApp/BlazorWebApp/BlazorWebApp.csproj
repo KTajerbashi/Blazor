@@ -7,16 +7,16 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FastReport.OpenSource" Version="2025.2.10" />
-		<PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2025.2.10" />
-		<PackageReference Include="FastReport.OpenSource.Web" Version="2025.2.10" />
-		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.12.0" />
-		<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.12.0" />
-		<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.12.0" />
-		<PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.12.0" />
+		<PackageReference Include="FastReport.OpenSource" Version="2026.1.2" />
+		<PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2026.1.2" />
+		<PackageReference Include="FastReport.OpenSource.Web" Version="2026.1.2" />
+		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.13.1" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.13.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.13.0" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.13.0" />
 		<PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.12.0-beta.1" />
-		<PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.12.0" />
-		<PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.8" />
+		<PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.13.1" />
+		<PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.10" />
 	</ItemGroup>
 
 </Project>
